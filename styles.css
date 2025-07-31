@@ -265,12 +265,15 @@ footer {
     border-radius: 15px;
     padding: 2rem;
     box-shadow: 0 4px 15px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .tabs-container {
     display: flex;
     border-bottom: 2px solid var(--bg-accent);
     margin-bottom: 1.5rem;
+    flex-shrink: 0;
 }
 
 .tab-link {
@@ -291,6 +294,11 @@ footer {
     opacity: 1;
     color: var(--text-highlight);
     border-bottom-color: var(--text-highlight);
+}
+
+.tab-content-wrapper {
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 .tab-content {
@@ -495,7 +503,7 @@ footer {
 @media (min-width: 769px) {
     html, body {
         height: 100%;
-        overflow: hidden; /* La clave para quitar el scroll de la página */
+        overflow: hidden;
     }
 
     .page-wrapper {
@@ -503,13 +511,19 @@ footer {
     }
 
     .main-content {
-        overflow: hidden; /* Evita que el contenido principal cree su propio scroll */
+        overflow: hidden;
     }
 
-    /* Corrección: Se aplica el overflow a los contenedores correctos */
     .about-layout, .projects-section {
         height: 100%;
-        overflow-y: auto; /* Scroll solo si el contenido interno es más alto que la pantalla */
+    }
+    
+    .about-layout {
+        overflow: hidden;
+    }
+
+    .about-sidebar, .tab-content-wrapper, .projects-section {
+        overflow-y: auto;
     }
 }
 
@@ -518,29 +532,54 @@ footer {
 /* --- ESTILOS PARA MÓVILES --- */
 /* ======================================================= */
 @media (max-width: 768px) {
+    /* --- Reset para layout de pantalla completa de escritorio --- */
+    html, body {
+        height: auto;
+        overflow: auto;
+    }
+
     header {
         padding: 1rem 1.5rem;
     }
 
-    .hero, .about-layout {
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 2rem;
-    }
-
-    .about-sidebar {
-        width: 100%;
-    }
-
+    /* --- Estilos para la página de Inicio en móvil --- */
     .hero {
         flex-direction: column-reverse;
         text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
     }
 
     .image img {
         max-height: 40vh;
     }
 
+    /* --- Estilos para la página "Acerca de Mí" en móvil --- */
+    .about-layout {
+        flex-direction: column; /* Apila las columnas */
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .about-sidebar,
+    .about-main-content {
+        width: 100%; /* Ocupan todo el ancho */
+    }
+    
+    .about-main-content {
+        padding: 1.5rem;
+    }
+    
+    .tabs-container {
+        margin-bottom: 1rem;
+    }
+    
+    .tab-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* --- Footer en móvil --- */
     footer {
         grid-template-columns: 1fr;
         text-align: center;
