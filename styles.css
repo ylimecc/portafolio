@@ -1,4 +1,4 @@
-/* --- Variables de Color --- */
+/* --- Variables de Color (Custom Properties) --- */
 :root {
     --bg-main: #695a84;
     --bg-accent: #744daa;
@@ -50,7 +50,6 @@ header {
 
 header h1 {
     font-size: 1.8rem;
-    color: var(--text-light);
 }
 
 .logo-link {
@@ -82,12 +81,14 @@ nav a:hover {
     color: var(--text-highlight);
 }
 
-/* --- Sección Principal --- */
+/* --- Estructura del Contenido Principal --- */
 .main-content {
     flex: 1;
     display: flex;
+    flex-direction: column;
 }
 
+/* --- Página de Inicio (Hero) --- */
 .hero {
     flex: 1;
     display: flex;
@@ -170,8 +171,7 @@ footer {
     filter: drop-shadow(0 0 5px var(--hover-shadow));
 }
 
-
-/* --- Menú Hamburguesa --- */
+/* --- Menú Hamburguesa (Oculto en Desktop por defecto) --- */
 .menu-toggle {
     display: none;
     background: transparent;
@@ -189,15 +189,16 @@ footer {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* --- Estilos para la página "Acerca de Mí" --- */
 
+/* --- Estilos para la página "Acerca de Mí" --- */
 .about-section {
     background-color: var(--bg-accent);
-    padding: 3rem 1.5rem;
+    padding: 2rem 1.5rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
 }
 
 .about-container {
@@ -213,8 +214,8 @@ footer {
 .profile-picture {
     width: 150px;
     height: 150px;
-    border-radius: 50%; /* Hace la foto circular */
-    object-fit: cover; /* Asegura que la imagen no se deforme */
+    border-radius: 50%;
+    object-fit: cover;
     border: 4px solid var(--header-footer-bg);
     margin-bottom: 1.5rem;
 }
@@ -239,7 +240,7 @@ footer {
     font-size: clamp(1rem, 2.5vw, 1.1rem);
     line-height: 1.8;
     max-width: 650px;
-    margin: 0 auto 1rem auto; /* Centra los párrafos */
+    margin: 0 auto 1rem auto;
 }
 
 .skills-list {
@@ -257,6 +258,7 @@ footer {
     font-size: 0.9rem;
     font-weight: bold;
     transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: default;
 }
 
 .skill-tag:hover {
@@ -281,14 +283,17 @@ footer {
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
 
-/* --- Estilos para la página "Mis Proyectos" --- */
 
+/* --- Estilos para la página "Mis Proyectos" --- */
 .projects-section {
     width: 100%;
-    padding: 3rem 1rem;
+    padding: 2rem 1rem;
     background-color: var(--bg-accent);
     text-align: center;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .projects-section h2 {
@@ -375,7 +380,7 @@ footer {
 
 .carousel-button {
     position: absolute;
-    top: 50%;
+    top: 40%; /* Ajustado para que no cubra el texto */
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -392,13 +397,8 @@ footer {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.prev-button {
-    left: 10px;
-}
-
-.next-button {
-    right: 10px;
-}
+.prev-button { left: 10px; }
+.next-button { right: 10px; }
 
 .carousel-dots {
     text-align: center;
@@ -422,21 +422,53 @@ footer {
     background-color: var(--text-highlight);
 }
 
-/* --- Media Query para Móviles (Responsive) --- */
+/* ======================================================= */
+/* --- ESTILOS PARA ESCRITORIO (PANTALLA COMPLETA) --- */
+/* ======================================================= */
+@media (min-width: 769px) {
+    html, body {
+        height: 100%;
+        overflow: hidden; /* La clave para quitar el scroll de la página */
+    }
+
+    .page-wrapper {
+        height: 100%;
+    }
+
+    .main-content {
+        overflow: hidden; /* Evita que el contenido principal cree su propio scroll */
+    }
+
+    /* Las secciones de contenido ahora tienen un scroll interno si es necesario */
+    .about-section, .projects-section {
+        height: 100%;
+        overflow-y: auto; /* Scroll solo si el contenido es más alto que la pantalla */
+    }
+
+    /* Ajuste para que el contenedor en "Acerca de Mí" no se pegue al borde */
+    .about-container {
+        margin: 2rem 0;
+    }
+}
+
+
+/* ======================================================= */
+/* --- ESTILOS PARA MÓVILES --- */
+/* ======================================================= */
 @media (max-width: 768px) {
     header {
         padding: 1rem 1.5rem;
     }
 
     .hero {
-        flex-direction: column-reverse; 
-        text-align: center; 
+        flex-direction: column-reverse;
+        text-align: center;
         padding: 2rem 1.5rem;
         gap: 2rem;
     }
 
     .image img {
-        max-height: 40vh; 
+        max-height: 40vh;
     }
 
     footer {
@@ -455,10 +487,10 @@ footer {
     nav ul {
         display: flex;
         flex-direction: column;
-        position: fixed; 
+        position: fixed;
         top: 0;
         right: 0;
-        height: 100%; 
+        height: 100%;
         background-color: var(--header-footer-bg);
         width: 250px;
         padding: 4rem 1rem 1rem 1rem;
@@ -475,7 +507,6 @@ footer {
         width: 100%;
     }
     
-    /* Reglas explícitas para los links del menú */
     nav ul a {
         color: var(--text-light);
         padding: 0.75rem 1rem;
