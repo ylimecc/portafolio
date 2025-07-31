@@ -112,3 +112,29 @@ if (carousel) {
         carousel.style.transform = 'translateX(-' + newSlideWidth * currentIndex + 'px)';
     });
 }
+
+// --- LÓGICA PARA LAS PESTAÑAS DE "ACERCA DE MÍ" ---
+const tabsContainer = document.querySelector('.tabs-container');
+
+// Solo ejecutar si estamos en la página "Acerca de Mí"
+if (tabsContainer) {
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabsContainer.addEventListener('click', (e) => {
+        const clickedTab = e.target.closest('.tab-link');
+        if (!clickedTab) return;
+
+        // Remover clase 'active' de todos los links y contenidos
+        tabLinks.forEach(link => link.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Añadir 'active' al link y contenido seleccionados
+        clickedTab.classList.add('active');
+        const tabId = clickedTab.dataset.tab;
+        const targetContent = document.getElementById(tabId);
+        if (targetContent) {
+            targetContent.classList.add('active');
+        }
+    });
+}

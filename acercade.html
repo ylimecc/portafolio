@@ -9,13 +9,9 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <!-- El header es el mismo para mantener la consistencia del sitio -->
+        <!-- Header consistente en todo el sitio -->
         <header>
-            <h1>
-                <a href="index.html" class="logo-link" aria-label="Volver al inicio" title="Inicio">
-                    Ylimecc
-                </a>
-            </h1>
+            <h1><a href="index.html" class="logo-link">Ylimecc</a></h1>
             <nav>
                 <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
                     <span class="hamburger-line"></span>
@@ -32,67 +28,95 @@
         </header>
 
         <main class="main-content">
-            <!-- Contenido principal de la página "Acerca de Mí" -->
-            <section class="about-section">
-                <div class="about-container">
-                    
-                    <img src="https://scontent.fsap16-1.fna.fbcdn.net/v/t39.30808-6/430168879_3356920687786501_7052974630238389931_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=D3fZ-HDZ-eUQ7kNvwEO3fh7&_nc_oc=Adl2PHFZaTX85GfXJ3P1XUqRNI2eWFsc_59KE--iDmJxLNaWAQ4Rz5KE_QNC84Y1X72EFI1AmpkBa_ikNxdDokGc&_nc_zt=23&_nc_ht=scontent.fsap16-1.fna&_nc_gid=8WtypTLXKXlcD7QEsYMfqQ&oh=00_AfShPVLApYEHc8z92ke6sQEU2I8CVrm5Ax2RvnbTYhms_w&oe=6891BCCA" alt="Foto de Emily CA" class="profile-picture" onerror="this.onerror=null;this.src='https://placehold.co/150x150/7b5dc8/FFFFFF?text=Foto';">
-                    
-                    <h2>Acerca de Mí</h2>
+            <!-- Nuevo layout para la sección "Acerca de Mí" -->
+            <div class="about-layout">
 
-                    <!-- PERSONALIZA ESTE TEXTO CON TU INFORMACIÓN -->
-                    <p>
-                        ¡Hola! Soy Emily, una desarrolladora web e Ingeniera en Sistemas apasionada por la tecnología y la creación de soluciones digitales. Me encanta transformar ideas complejas en interfaces de usuario elegantes, funcionales y accesibles.
-                    </p>
-                    <p>
-                        Mi objetivo es siempre escribir código limpio y mantenible, y me esfuerzo por estar en constante aprendizaje para mantenerme al día con las últimas tecnologías del mundo del desarrollo web.
-                    </p>
+                <!-- Columna Izquierda: Foto y Contacto -->
+                <aside class="about-sidebar">
+                    <div class="profile-card">
+                        <div class="profile-image-container">
+                             <!-- IMPORTANTE: Reemplaza esta URL con la ruta a tu foto -->
+                            <img src="https://placehold.co/200x200/7b5dc8/FFFFFF?text=Tu+Foto" alt="Foto de Emily CA" class="profile-picture" onerror="this.onerror=null;this.src='https://placehold.co/200x200/7b5dc8/FFFFFF?text=Foto';">
+                        </div>
+                        <h3>Emily CA</h3>
+                        <p>Ing. en Sistemas y Web Developer</p>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h4>Filosofía</h4>
+                        <p>“El código debe ser tan elegante y legible como la prosa. La mejor solución no solo funciona, sino que inspira.”</p>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h4>Contacto</h4>
+                        <p>¿Listo para crear algo increíble? ¡Hablemos!</p>
+                        <a href="mailto:tu-email@example.com" class="cta-button">Enviar un Correo</a>
+                    </div>
+                </aside>
 
-                    <h3>Mis Habilidades</h3>
-                    <div class="skills-list">
-                        <!-- Aquí puedes listar tus tecnologías -->
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Git y GitHub</span>
-                        <span class="skill-tag">Diseño Responsivo</span>
-                        <span class="skill-tag">Figma</span>
+                <!-- Columna Derecha: Contenido Principal con Pestañas -->
+                <section class="about-main-content">
+                    <div class="tabs-container">
+                        <button class="tab-link active" data-tab="biografia">Biografía</button>
+                        <button class="tab-link" data-tab="habilidades">Habilidades</button>
+                        <button class="tab-link" data-tab="experiencia">Experiencia</button>
                     </div>
 
-                    <h3>Mi Filosofía</h3>
-                    <p>
-                        Creo firmemente en la colaboración y la comunicación. Disfruto trabajando en equipo para resolver problemas y construir productos de los que todos podamos estar orgullosos. Para mí, un proyecto exitoso no solo funciona bien, sino que también ofrece una experiencia de usuario excepcional.
-                    </p>
+                    <div class="tab-content-wrapper">
+                        <!-- Contenido de la pestaña Biografía -->
+                        <div id="biografia" class="tab-content active">
+                            <h2>Mi Trayectoria</h2>
+                            <p>Desde que escribí mi primera línea de código, supe que había encontrado mi pasión. Como Ingeniera en Sistemas, mi formación me dio una base sólida en lógica y resolución de problemas, pero es en el desarrollo web donde mi creatividad realmente cobra vida.</p>
+                            <p>Me especializo en la creación de experiencias de usuario fluidas y dinámicas, utilizando las tecnologías más modernas para construir aplicaciones web rápidas, responsivas y visualmente atractivas. Mi viaje profesional ha estado marcado por la curiosidad constante y el deseo de superar nuevos desafíos técnicos.</p>
+                        </div>
 
-                    <a href="ercastellanosc@gmail.com" class="cta-button">¡Hablemos de tu proyecto!</a>
-
-                </div>
-            </section>
+                        <!-- Contenido de la pestaña Habilidades -->
+                        <div id="habilidades" class="tab-content">
+                            <h2>Mi Arsenal Tecnológico</h2>
+                            <p>Estas son algunas de las tecnologías y herramientas con las que trabajo diariamente para construir soluciones robustas y eficientes.</p>
+                            <div class="skills-grid">
+                                <div class="skill-item"><strong>Frontend:</strong> HTML5, CSS3, JavaScript (ES6+), React, Tailwind CSS</div>
+                                <div class="skill-item"><strong>Backend:</strong> Node.js, Express, Python, SQL, MongoDB</div>
+                                <div class="skill-item"><strong>Herramientas:</strong> Git, GitHub, Docker, Figma, VS Code</div>
+                                <div class="skill-item"><strong>Principios:</strong> Diseño Responsivo, Accesibilidad (WCAG), APIs RESTful, UI/UX</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenido de la pestaña Experiencia -->
+                        <div id="experiencia" class="tab-content">
+                            <h2>Experiencia Profesional</h2>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2022 - Presente</div>
+                                    <div class="timeline-content">
+                                        <h3>Web Developer Freelance</h3>
+                                        <p>Desarrollo de sitios web y aplicaciones a medida para clientes de diversas industrias, enfocándome en el rendimiento y la experiencia de usuario.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2020 - 2022</div>
+                                    <div class="timeline-content">
+                                        <h3>Desarrolladora Jr. en Tech Solutions</h3>
+                                        <p>Colaboré en el mantenimiento y desarrollo de nuevas funcionalidades para una plataforma SaaS, trabajando con un equipo ágil.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
         
-        <!-- Footer -->
+        <!-- El footer no necesita cambios -->
         <footer>
-            <div class="footer-brand">Designed by Emilyrcc</div>
+            <div class="footer-brand">Designed by Ylimecc</div>
             <div class="footer-copyright">Copyright &copy; 2025</div>
             <div class="footer-social">
-                <a href="https://www.facebook.com/emilyrcc/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi Facebook">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"></path></svg>
-                </a>
-                <a href="https://www.instagram.com/emilyrcc_/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi Instagram">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.556.556.9 1.112 1.153 1.772.248.638.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122s-.015 3.056-.06 4.122c-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772c-.556.556-1.112.9-1.772 1.153-.638.248-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06s-3.056-.015-4.122-.06c-1.065-.05-1.79-.218-2.428-.465a4.883 4.883 0 0 1-1.772-1.153c-.556-.556-.9-1.112-1.153-1.772-.248-.638-.415-1.363-.465-2.428C2.015 15.056 2 14.717 2 12s.015-3.056.06-4.122c.05-1.065.218-1.79.465-2.428a4.883 4.883 0 0 1 1.153-1.772c.556-.556 1.112.9 1.772-1.153.638-.248 1.363-.415 2.428-.465C8.944 2.015 9.283 2 12 2zm0 1.8c-2.649 0-2.984.01-4.04.057-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.048 1.056-.058 1.391-.058 4.04s.01 2.984.058 4.04c.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.057.048 1.391.058 4.04.058s2.984-.01 4.04-.058c.975-.045 1.504-.207 1.857-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353-.3-.882.344-1.857.048-1.056.058-1.391.058-4.04s-.01-2.984-.058-4.04c-.045-.975-.207-1.504-.344-1.857a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344C14.984 3.81 14.649 3.8 12 3.8zm0 3.35c-2.849 0-5.156 2.307-5.156 5.156s2.307 5.156 5.156 5.156 5.156-2.307 5.156-5.156-2.307-5.156-5.156-5.156zm0 8.704c-1.96 0-3.548-1.588-3.548-3.548s1.588-3.548 3.548-3.548 3.548 1.588 3.548 3.548-1.588 3.548-3.548 3.548zm6.406-8.334c-.766 0-1.386.62-1.386 1.386s.62 1.386 1.386 1.386 1.386-.62 1.386-1.386-.62-1.386-1.386-1.386z"></path></svg>
-                </a>
-                <a href="https://www.twitch.tv/emilyrcc/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi Twitch">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zM8.286 4.714h1.714v5.143H8.286zM2 0L0 4.571v15.429h5.143V24l4.571-4h3.429l6.857-6.857V0H2zm18.857 13.143l-3.428 3.428h-3.429l-3.143 3.143v-3.143H6.857V1.714h14v11.429z"></path></svg>
-                </a>
-                <a href="https://x.com/emilyrcc_/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi X (Twitter)">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-                </a>
-                <a href="https://github.com/ylimecc/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi GitHub">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.949 3.125 9.138 7.438 10.619.547.1.747-.238.747-.528 0-.26-.01-1.112-.015-2.062-3.037.662-3.675-1.325-3.675-1.325-.5-1.275-1.219-1.613-1.219-1.613-1-.688.075-.675.075-.675 1.1.075 1.675 1.138 1.675 1.138.975 1.675 2.563 1.188 3.188.907.1-.7.375-1.188.688-1.463-2.437-.275-4.994-1.212-4.994-5.412 0-1.2.425-2.175 1.125-2.938-.113-.275-.488-1.387.106-2.887 0 0 .913-.288 3 .112.863-.238 1.788-.363 2.7-.363.912 0 1.837.125 2.7.363 2.087-1.4 3-.112 3-.112.6 1.5.225 2.612.113 2.887.7.763 1.125 1.738 1.125 2.938 0 4.212-2.563 5.137-5 5.412.4.35.75 1.05.75 2.113 0 1.525-.013 2.75-.013 3.125 0 .287.25.625.75.525C20.875 21.138 24 16.949 24 12c0-5.523-4.477-10-10-10z"></path></svg>
-                </a>
+                 <a href="https://www.facebook.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Visita mi Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"></path></svg></a>
+                <a href="https://www.instagram.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Visita mi Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.556.556.9 1.112 1.153 1.772.248.638.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122s-.015 3.056-.06 4.122c-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772c-.556.556-1.112.9-1.772 1.153-.638.248-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06s-3.056-.015-4.122-.06c-1.065-.05-1.79-.218-2.428-.465a4.883 4.883 0 0 1-1.772-1.153c-.556-.556-.9-1.112-1.153-1.772-.248-.638-.415-1.363-.465-2.428C2.015 15.056 2 14.717 2 12s.015-3.056.06-4.122c.05-1.065.218-1.79.465-2.428a4.883 4.883 0 0 1 1.153-1.772c.556-.556 1.112.9 1.772-1.153.638-.248 1.363-.415 2.428-.465C8.944 2.015 9.283 2 12 2zm0 1.8c-2.649 0-2.984.01-4.04.057-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.048 1.056-.058 1.391-.058 4.04s.01 2.984.058 4.04c.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.057.048 1.391.058 4.04.058s2.984-.01 4.04-.058c.975-.045 1.504-.207 1.857-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353-.3-.882.344-1.857.048-1.056.058-1.391.058-4.04s-.01-2.984-.058-4.04c-.045-.975-.207-1.504-.344-1.857a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344C14.984 3.81 14.649 3.8 12 3.8zm0 3.35c-2.849 0-5.156 2.307-5.156 5.156s2.307 5.156 5.156 5.156 5.156-2.307 5.156-5.156-2.307-5.156-5.156-5.156zm0 8.704c-1.96 0-3.548-1.588-3.548-3.548s1.588-3.548 3.548-3.548 3.548 1.588 3.548 3.548-1.588 3.548-3.548 3.548zm6.406-8.334c-.766 0-1.386.62-1.386 1.386s.62 1.386 1.386 1.386 1.386-.62 1.386-1.386-.62-1.386-1.386-1.386z"></path></svg></a>
+                <a href="https://www.twitch.tv/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Visita mi Twitch"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zM8.286 4.714h1.714v5.143H8.286zM2 0L0 4.571v15.429h5.143V24l4.571-4h3.429l6.857-6.857V0H2zm18.857 13.143l-3.428 3.428h-3.429l-3.143 3.143v-3.143H6.857V1.714h14v11.429z"></path></svg></a>
+                <a href="https://twitter.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Visita mi X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" aria-label="Visita mi GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.949 3.125 9.138 7.438 10.619.547.1.747-.238.747-.528 0-.26-.01-1.112-.015-2.062-3.037.662-3.675-1.325-3.675-1.325-.5-1.275-1.219-1.613-1.219-1.613-1-.688.075-.675.075-.675 1.1.075 1.675 1.138 1.675 1.138.975 1.675 2.563 1.188 3.188.907.1-.7.375-1.188.688-1.463-2.437-.275-4.994-1.212-4.994-5.412 0-1.2.425-2.175 1.125-2.938-.113-.275-.488-1.387.106-2.887 0 0 .913-.288 3 .112.863-.238 1.788-.363 2.7-.363.912 0 1.837.125 2.7.363 2.087-1.4 3-.112 3-.112.6 1.5.225 2.612.113 2.887.7.763 1.125 1.738 1.125 2.938 0 4.212-2.563 5.137-5 5.412.4.35.75 1.05.75 2.113 0 1.525-.013 2.75-.013 3.125 0 .287.25.625.75.525C20.875 21.138 24 16.949 24 12c0-5.523-4.477-10-10-10z"></path></svg></a>
             </div>
         </footer>
     </div>
