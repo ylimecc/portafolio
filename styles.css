@@ -1,4 +1,4 @@
-/* --- Variables de Color (Custom Properties) --- */
+/* --- Variables de Color --- */
 :root {
     --bg-main: #695a84;
     --bg-accent: #744daa;
@@ -82,7 +82,7 @@ nav a:hover {
     color: var(--text-highlight);
 }
 
-/* --- Sección Principal (Hero) --- */
+/* --- Sección Principal --- */
 .main-content {
     flex: 1;
     display: flex;
@@ -171,7 +171,7 @@ footer {
 }
 
 
-/* --- Menú Hamburguesa (Oculto en Desktop) --- */
+/* --- Menú Hamburguesa --- */
 .menu-toggle {
     display: none;
     background: transparent;
@@ -189,6 +189,98 @@ footer {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* --- Estilos para la página "Acerca de Mí" --- */
+
+.about-section {
+    background-color: var(--bg-accent);
+    padding: 3rem 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-container {
+    background-color: var(--bg-main);
+    padding: 2.5rem;
+    border-radius: 15px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Hace la foto circular */
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    border: 4px solid var(--header-footer-bg);
+    margin-bottom: 1.5rem;
+}
+
+.about-container h2 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    color: var(--text-highlight);
+    margin-bottom: 1rem;
+}
+
+.about-container h3 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    color: var(--text-light);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--header-footer-bg);
+    display: inline-block;
+    padding-bottom: 0.25rem;
+}
+
+.about-container p {
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.8;
+    max-width: 650px;
+    margin: 0 auto 1rem auto; /* Centra los párrafos */
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background-color: var(--header-footer-bg);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px);
+    background-color: var(--bg-accent);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--text-highlight);
+    color: #333;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
 /* --- Media Query para Móviles (Responsive) --- */
 @media (max-width: 768px) {
     header {
@@ -196,14 +288,14 @@ footer {
     }
 
     .hero {
-        flex-direction: column-reverse; /* Imagen arriba, texto abajo */
-        text-align: center; /* Centra todo el contenido */
+        flex-direction: column-reverse; 
+        text-align: center; 
         padding: 2rem 1.5rem;
         gap: 2rem;
     }
 
     .image img {
-        max-height: 40vh; /* Un tamaño de imagen razonable */
+        max-height: 40vh; 
     }
 
     footer {
@@ -222,10 +314,10 @@ footer {
     nav ul {
         display: flex;
         flex-direction: column;
-        position: fixed; /* Usamos 'fixed' para que se base en la pantalla */
+        position: fixed; 
         top: 0;
         right: 0;
-        height: 100%; /* Ocupa toda la altura */
+        height: 100%; 
         background-color: var(--header-footer-bg);
         width: 250px;
         padding: 4rem 1rem 1rem 1rem;

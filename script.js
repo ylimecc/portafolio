@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- LÓGICA PARA LA ANIMACIÓN DE TEXTO (TYPEWRITER) ---
+    // --- (TYPEWRITER) ---
     const texts = ["Web Developer", "Ing. en Sistemas", "Freelancer"];
     let index = 0;
     const textElement = document.getElementById("dynamicText");
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
         typeText(texts[index]);
     }
 
-    // --- LÓGICA PARA EL MENÚ HAMBURGUESA ---
+    // --- MENÚ HAMBURGUESA ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav ul');
 
