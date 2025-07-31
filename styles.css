@@ -21,13 +21,16 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--bg-main);
     color: var(--text-light);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     line-height: 1.6;
+    /* --- Líneas añadidas --- */
+    height: 100vh;      /* Fija la altura al 100% de la pantalla */
+    overflow: hidden;   /* Esconde el scroll */
 }
 
 .page-wrapper {
@@ -203,29 +206,82 @@ footer {
 
 
 /* --- Media Query para Dispositivos Móviles (Responsive) --- */
+/* --- Reemplaza TODA esta sección en tu CSS --- */
 @media (max-width: 768px) {
+    /* --- Ajustes para el layout fijo --- */
+    .page-wrapper {
+        justify-content: space-between; /* Distribuye el espacio */
+    }
+    
     header {
-        padding: 1rem 1.5rem;
+        padding: 0.75rem 1.5rem; /* Menos padding */
     }
 
-    /* Ocultamos el menú de escritorio y mostramos el botón hamburguesa */
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 0 1.5rem; /* Padding horizontal, sin vertical */
+        gap: 0.75rem; /* Menos espacio entre elementos */
+        flex-grow: 0; /* Evita que crezca más de la cuenta */
+    }
+
+    /* Reducimos drásticamente el tamaño de la imagen */
+    .hero .image img {
+        max-height: 30vh; /* La imagen ocupará máximo el 30% del alto de la pantalla */
+    }
+
+    .content {
+        max-width: 100%;
+    }
+    
+    /* Reducimos el tamaño de los textos */
+    .content h2 {
+        font-size: clamp(1.8rem, 7vw, 2.2rem);
+        margin-bottom: 0.5rem;
+    }
+    
+    .dynamic-text {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 0.75rem 1rem; /* Menos padding */
+        font-size: 0.8rem; /* Texto del footer más pequeño */
+        gap: 0.5rem;
+    }
+
+    .footer-brand, .footer-social {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .footer-social {
+        gap: 0.8rem;
+    }
+    
+    .footer-social svg {
+        width: 26px; /* Iconos un poco más pequeños */
+        height: 26px;
+    }
+
+    /* --- Estilos del menú hamburguesa (sin cambios) --- */
     nav ul {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Justo debajo del header */
+        top: 100%;
         right: 0;
         background-color: var(--header-footer-bg);
         width: 250px;
         padding: 1rem;
         border-radius: 0 0 0 10px;
         box-shadow: -2px 2px 5px var(--shadow-color);
-        /* Animación de entrada/salida */
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
     }
     
-    /* Clase que se añade con JS para mostrar el menú */
     nav ul.show {
         transform: translateX(0);
     }
@@ -236,7 +292,7 @@ footer {
     }
 
     .menu-toggle {
-        display: flex; /* Se muestra en móviles */
+        display: flex;
     }
 
     .menu-toggle.active .hamburger-line:nth-child(1) {
@@ -247,26 +303,5 @@ footer {
     }
     .menu-toggle.active .hamburger-line:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .hero {
-        flex-direction: column-reverse; /* Imagen arriba, texto abajo */
-        text-align: center;
-        padding: 2rem 1.5rem;
-        gap: 2rem;
-    }
-
-    .content {
-        max-width: 100%;
-    }
-
-    footer {
-        grid-template-columns: 1fr; /* Una sola columna en móvil */
-        text-align: center;
-    }
-
-    .footer-brand, .footer-social {
-        justify-content: center;
-        text-align: center;
     }
 }
