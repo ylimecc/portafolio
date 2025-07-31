@@ -53,3 +53,62 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+// --- LÓGICA PARA EL CARRUSEL DE PROYECTOS ---
+const carousel = document.querySelector('.carousel-slides');
+
+// Solo ejecutar el código del carrusel si estamos en la página de proyectos
+if (carousel) {
+    const slides = Array.from(carousel.children);
+    const nextButton = document.querySelector('.next-button');
+    const prevButton = document.querySelector('.prev-button');
+    const dotsNav = document.querySelector('.carousel-dots');
+
+    // Crear los puntos de navegación
+    slides.forEach((slide, index) => {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            moveToSlide(index);
+        });
+        dotsNav.appendChild(dot);
+    });
+
+    const dots = Array.from(dotsNav.children);
+    const slideWidth = slides[0].getBoundingClientRect().width;
+    let currentIndex = 0;
+
+    const moveToSlide = (targetIndex) => {
+        carousel.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
+        
+        // Actualizar el punto activo
+        dots[currentIndex].classList.remove('active');
+        dots[targetIndex].classList.add('active');
+        
+        currentIndex = targetIndex;
+    };
+
+    // Event Listeners para los botones
+    nextButton.addEventListener('click', () => {
+        let nextIndex = currentIndex + 1;
+        if (nextIndex >= slides.length) {
+            nextIndex = 0; // Vuelve al inicio
+        }
+        moveToSlide(nextIndex);
+    });
+
+    prevButton.addEventListener('click', () => {
+        let prevIndex = currentIndex - 1;
+        if (prevIndex < 0) {
+            prevIndex = slides.length - 1; // Va al final
+        }
+        moveToSlide(prevIndex);
+    });
+    
+    // Ajustar el tamaño del carrusel si la ventana cambia de tamaño
+    window.addEventListener('resize', () => {
+        const newSlideWidth = slides[0].getBoundingClientRect().width;
+        carousel.style.transform = 'translateX(-' + newSlideWidth * currentIndex + 'px)';
+    });
+}

@@ -281,6 +281,147 @@ footer {
     box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
 
+/* --- Estilos para la página "Mis Proyectos" --- */
+
+.projects-section {
+    width: 100%;
+    padding: 3rem 1rem;
+    background-color: var(--bg-accent);
+    text-align: center;
+    flex-grow: 1;
+}
+
+.projects-section h2 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    color: var(--text-highlight);
+    margin-bottom: 2rem;
+}
+
+.carousel-container {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.slide-content {
+    padding: 1.5rem 2rem;
+    background-color: var(--bg-main);
+    text-align: left;
+}
+
+.slide-content h3 {
+    color: var(--text-highlight);
+    margin-bottom: 0.5rem;
+}
+
+.slide-content p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.project-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.project-button {
+    background-color: var(--text-highlight);
+    color: #333;
+}
+.project-button.secondary {
+    background-color: transparent;
+    color: var(--text-highlight);
+    border: 2px solid var(--text-highlight);
+}
+
+.project-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.carousel-dots {
+    text-align: center;
+    padding: 15px;
+    background-color: var(--bg-main);
+}
+
+.carousel-dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: var(--bg-accent);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active,
+.carousel-dot:hover {
+    background-color: var(--text-highlight);
+}
+
 /* --- Media Query para Móviles (Responsive) --- */
 @media (max-width: 768px) {
     header {
