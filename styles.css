@@ -190,7 +190,7 @@ footer {
 }
 
 
-/* --- Estilos para la página "Acerca de Mí" --- */
+/* --- Estilos para la página "Acerca de Mí" (Nuevo Diseño) --- */
 .about-layout {
     display: flex;
     flex-grow: 1;
@@ -350,6 +350,7 @@ footer {
     margin-bottom: 0.5rem;
 }
 
+
 /* --- Estilos para la página "Mis Proyectos" --- */
 .projects-section {
     width: 100%;
@@ -446,7 +447,7 @@ footer {
 
 .carousel-button {
     position: absolute;
-    top: 40%; /* Ajustado para que no cubra el texto */
+    top: 40%;
     transform: translateY(-50%);
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
@@ -505,15 +506,10 @@ footer {
         overflow: hidden; /* Evita que el contenido principal cree su propio scroll */
     }
 
-    /* Las secciones de contenido ahora tienen un scroll interno si es necesario */
-    .about-section, .projects-section {
+    /* Corrección: Se aplica el overflow a los contenedores correctos */
+    .about-layout, .projects-section {
         height: 100%;
-        overflow-y: auto; /* Scroll solo si el contenido es más alto que la pantalla */
-    }
-
-    /* Ajuste para que el contenedor en "Acerca de Mí" no se pegue al borde */
-    .about-container {
-        margin: 2rem 0;
+        overflow-y: auto; /* Scroll solo si el contenido interno es más alto que la pantalla */
     }
 }
 
@@ -526,11 +522,19 @@ footer {
         padding: 1rem 1.5rem;
     }
 
+    .hero, .about-layout {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+
+    .about-sidebar {
+        width: 100%;
+    }
+
     .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding: 2rem 1.5rem;
-        gap: 2rem;
     }
 
     .image img {
