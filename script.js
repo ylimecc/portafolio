@@ -26,14 +26,21 @@ document.addEventListener("DOMContentLoaded", function() {
             en: ["Web Developer", "Systems Engineer", "Freelancer"]
         };
         let textIndex = 0;
-        let currentLangForTyping = 'es'; // Se actualizará con el idioma actual
+        let currentLangForTyping = 'es';
+        let timeoutId; // Variable para controlar los timeouts
+
+        // Función para detener cualquier animación en curso
+        const stopAnimation = () => {
+            clearTimeout(timeoutId);
+            dynamicTextElement.textContent = '';
+        };
 
         function typeText(text, i = 0) {
             if (i < text.length) {
                 dynamicTextElement.textContent += text.charAt(i);
-                setTimeout(() => typeText(text, i + 1), 100);
+                timeoutId = setTimeout(() => typeText(text, i + 1), 100);
             } else {
-                setTimeout(deleteText, 1500);
+                timeoutId = setTimeout(deleteText, 1500);
             }
         }
 
@@ -41,19 +48,20 @@ document.addEventListener("DOMContentLoaded", function() {
             let currentText = dynamicTextElement.textContent;
             if (currentText.length > 0) {
                 dynamicTextElement.textContent = currentText.substring(0, currentText.length - 1);
-                setTimeout(deleteText, 50);
+                timeoutId = setTimeout(deleteText, 50);
             } else {
                 textIndex = (textIndex + 1) % texts[currentLangForTyping].length;
-                setTimeout(() => typeText(texts[currentLangForTyping][textIndex]), 500);
+                timeoutId = setTimeout(() => typeText(texts[currentLangForTyping][textIndex]), 500);
             }
         }
         
-        // Iniciar la animación con el idioma detectado
+        // Escuchar el evento de cambio de idioma
         document.addEventListener('languageChanged', (e) => {
+            stopAnimation(); // Detener y limpiar la animación actual
             currentLangForTyping = e.detail.lang;
-            dynamicTextElement.textContent = ''; // Limpiar texto anterior
-            textIndex = 0; // Reiniciar índice
-            typeText(texts[currentLangForTyping][textIndex]);
+            textIndex = 0;
+            // Iniciar la nueva animación después de un breve retraso para asegurar que todo esté limpio
+            timeoutId = setTimeout(() => typeText(texts[currentLangForTyping][textIndex]), 100);
         });
     }
 
@@ -66,35 +74,43 @@ document.addEventListener("DOMContentLoaded", function() {
         const dotsNav = document.querySelector('.carousel-dots');
         let currentIndex = 0;
 
-        slides.forEach((slide, index) => {
-            const dot = document.createElement('button');
-            dot.classList.add('carousel-dot');
-            if (index === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => moveToSlide(index));
-            dotsNav.appendChild(dot);
-        });
+        if (slides.length > 0) {
+            slides.forEach((slide, index) => {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => moveToSlide(index));
+                dotsNav.appendChild(dot);
+            });
 
-        const dots = Array.from(dotsNav.children);
+            const dots = Array.from(dotsNav.children);
 
-        const moveToSlide = (targetIndex) => {
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            carousel.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
-            dots[currentIndex].classList.remove('active');
-            dots[targetIndex].classList.add('active');
-            currentIndex = targetIndex;
-        };
+            const moveToSlide = (targetIndex) => {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                if (carousel) {
+                    carousel.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
+                }
+                if (dots[currentIndex]) {
+                    dots[currentIndex].classList.remove('active');
+                }
+                if (dots[targetIndex]) {
+                    dots[targetIndex].classList.add('active');
+                }
+                currentIndex = targetIndex;
+            };
 
-        nextButton.addEventListener('click', () => {
-            let nextIndex = (currentIndex + 1) % slides.length;
-            moveToSlide(nextIndex);
-        });
+            nextButton.addEventListener('click', () => {
+                let nextIndex = (currentIndex + 1) % slides.length;
+                moveToSlide(nextIndex);
+            });
 
-        prevButton.addEventListener('click', () => {
-            let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-            moveToSlide(prevIndex);
-        });
-        
-        window.addEventListener('resize', () => moveToSlide(currentIndex));
+            prevButton.addEventListener('click', () => {
+                let prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                moveToSlide(prevIndex);
+            });
+            
+            window.addEventListener('resize', () => moveToSlide(currentIndex));
+        }
     }
 
     // --- LÓGICA PARA LAS PESTAÑAS DE "ACERCA DE MÍ" ---
@@ -104,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const clickedTab = e.target.closest('.tab-link');
             if (!clickedTab) return;
             
-            const tabLinks = tabsContainer.querySelectorAll('.tab-link');
+            const tabLinks = document.querySelectorAll('.tabs-container .tab-link');
             const tabContents = document.querySelectorAll('.tab-content');
             
             tabLinks.forEach(link => link.classList.remove('active'));
@@ -113,8 +129,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const tabId = clickedTab.dataset.tab;
             const targetContent = document.getElementById(tabId);
             
-            // Activar la pestaña correcta para el idioma actual
-            const currentLang = document.documentElement.lang;
             document.querySelectorAll(`.tab-link[data-tab="${tabId}"]`).forEach(t => t.classList.add('active'));
             
             if (targetContent) {
@@ -133,24 +147,26 @@ document.addEventListener("DOMContentLoaded", function() {
         
         langElements.forEach(el => {
             if (el.dataset.lang === lang) {
-                el.style.display = ''; // Muestra el elemento del idioma correcto
+                el.style.display = '';
             } else {
-                el.style.display = 'none'; // Oculta el del otro idioma
+                el.style.display = 'none';
             }
         });
 
-        langToggle.textContent = lang === 'es' ? 'EN' : 'ES';
+        if(langToggle) {
+            langToggle.textContent = lang === 'es' ? 'EN' : 'ES';
+        }
         
-        // Disparar evento personalizado para que otros scripts (como el typewriter) reaccionen
         document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: lang } }));
     };
 
-    langToggle.addEventListener('click', () => {
-        const newLang = document.documentElement.lang === 'es' ? 'en' : 'es';
-        setLanguage(newLang);
-    });
+    if(langToggle) {
+        langToggle.addEventListener('click', () => {
+            const newLang = document.documentElement.lang === 'es' ? 'en' : 'es';
+            setLanguage(newLang);
+        });
+    }
 
-    // Cargar el idioma guardado o el del navegador al iniciar
     const savedLang = localStorage.getItem('language') || (navigator.language.startsWith('en') ? 'en' : 'es');
     setLanguage(savedLang);
 });
