@@ -386,7 +386,7 @@ footer {
 .timeline-item { margin-bottom: 2rem; }
 .timeline-dot {
     position: absolute;
-    left: -11px; /* Ajustado para centrar */
+    left: -11px;
     width: 20px;
     height: 20px;
     background-color: var(--bg-main);
@@ -597,23 +597,42 @@ footer {
         padding: 1rem 1.5rem;
     }
 
-    .hero, .about-layout {
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 2rem;
-    }
-
-    .about-sidebar {
-        width: 100%;
-    }
-
     .hero {
         flex-direction: column-reverse;
         text-align: center;
+        padding: 2rem 1.5rem;
+        gap: 2rem;
     }
 
     .image img {
         max-height: 40vh;
+    }
+    
+    /* --- Estilos para la página "Acerca de Mí" en móvil --- */
+    .about-layout {
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .about-sidebar,
+    .about-main-content {
+        width: 100%;
+    }
+    
+    .about-main-content {
+        padding: 1.5rem;
+    }
+    
+    .tabs-container {
+        margin-bottom: 1rem;
+        overflow-x: auto; /* Permite scroll horizontal en las pestañas */
+    }
+    
+    .tab-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        white-space: nowrap; /* Evita que el texto de la pestaña se rompa */
     }
 
     footer {
