@@ -24,7 +24,7 @@ body {
 .page-wrapper { display: flex; flex-direction: column; flex: 1; width: 100%; }
 
 /* --- Header y Navegación --- */
-header { background-color: var(--header-footer-bg); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1000; }
+header { background-color: var(--header-footer-bg); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: relative; z-index: 1000; flex-shrink: 0; }
 header h1 { font-size: 1.8rem; }
 .logo-link { color: var(--text-light); text-decoration: none; transition: all 0.3s ease; }
 .logo-link:hover { color: var(--text-highlight); text-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
@@ -49,11 +49,11 @@ nav a:hover { color: var(--text-highlight); }
 .image img { max-width: 100%; height: auto; max-height: 50vh; border-radius: 10px; filter: drop-shadow(0 4px 8px var(--shadow-color)); }
 
 /* --- Footer --- */
-footer { background-color: var(--header-footer-bg); padding: 1.5rem 2rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; }
+footer { background-color: var(--header-footer-bg); padding: 1.2rem 2rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; flex-shrink: 0; }
 .footer-brand { text-align: left; }
 .footer-copyright { text-align: center; }
 .footer-social { display: flex; justify-content: flex-end; gap: 1rem; }
-.footer-social svg { width: 30px; height: 30px; fill: var(--text-light); transition: transform 0.3s ease, filter 0.3s ease; }
+.footer-social svg { width: 28px; height: 28px; fill: var(--text-light); transition: transform 0.3s ease, filter 0.3s ease; }
 .footer-social a:hover svg { transform: scale(1.2); filter: drop-shadow(0 0 5px var(--hover-shadow)); }
 
 /* --- Menú Hamburguesa (Oculto en Desktop) --- */
@@ -61,48 +61,46 @@ footer { background-color: var(--header-footer-bg); padding: 1.5rem 2rem; displa
 .hamburger-line { display: block; width: 25px; height: 3px; margin: 5px 0; background-color: var(--text-light); transition: transform 0.3s ease, opacity 0.3s ease; }
 
 /* --- Página "Acerca de Mí" (Diseño CV) --- */
-.about-layout { display: flex; flex-grow: 1; background-color: var(--bg-accent); gap: 1.5rem; padding: 2rem; }
-.about-sidebar { width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 1.5rem; }
-.profile-card, .sidebar-widget { background-color: var(--bg-main); border-radius: 15px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 15px var(--shadow-color); border: 1px solid rgba(255, 255, 255, 0.1); }
-.profile-card .profile-picture { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--header-footer-bg); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.about-layout { display: flex; flex-grow: 1; background-color: var(--bg-accent); gap: 1.5rem; padding: 1.5rem; }
+.about-sidebar { width: 320px; flex-shrink: 0; display: flex; flex-direction: column; gap: 1.5rem; justify-content: space-around; }
+.profile-card, .sidebar-widget { background-color: var(--bg-main); border-radius: 15px; padding: 1.2rem; text-align: center; box-shadow: 0 4px 15px var(--shadow-color); border: 1px solid rgba(255, 255, 255, 0.1); }
+.profile-card .profile-picture { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 4px solid var(--header-footer-bg); transition: transform 0.3s ease, box-shadow 0.3s ease; margin-bottom: 0.5rem; }
 .profile-card:hover .profile-picture { transform: scale(1.1) rotate(5deg); box-shadow: 0 0 20px var(--text-highlight); }
-.profile-card h3 { color: var(--text-highlight); margin-bottom: 0.5rem; }
-.profile-card p, .profile-subtitle { font-size: 0.9rem; color: var(--text-light); opacity: 0.8; line-height: 1.5; margin-bottom: 0.25rem; }
-.info-line { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; font-size: 0.9rem; }
-.info-icon { width: 18px; height: 18px; fill: var(--text-highlight); flex-shrink: 0; }
-.sidebar-widget h4 { color: var(--text-highlight); margin-bottom: 1rem; font-size: 1.2rem; }
-.sidebar-widget .cta-button { margin-top: 1rem; padding: 10px 20px; display: inline-flex; align-items: center; gap: 0.5rem; }
-
-/* --- Nuevos Estilos para Idiomas, Intereses, etc. --- */
-.language-item { margin-bottom: 1rem; }
-.language-info { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.25rem; }
+.profile-card h3 { color: var(--text-highlight); margin-bottom: 0.5rem; font-size: 1.1rem; }
+.profile-card p, .profile-subtitle { font-size: 0.85rem; color: var(--text-light); opacity: 0.8; line-height: 1.5; margin-bottom: 0.25rem; }
+.info-line { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0.8rem; font-size: 0.85rem; }
+.info-icon { width: 16px; height: 16px; fill: var(--text-highlight); flex-shrink: 0; }
+.sidebar-widget h4 { color: var(--text-highlight); margin-bottom: 0.75rem; font-size: 1.1rem; }
+.sidebar-widget p { font-size: 0.9rem; line-height: 1.5; }
+.sidebar-widget .cta-button { margin-top: 0.75rem; padding: 8px 18px; display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+.language-item { margin-bottom: 0.75rem; }
+.language-info { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem; }
 .progress-bar { width: 100%; background-color: var(--bg-accent); border-radius: 10px; height: 8px; overflow: hidden; }
 .progress-bar-inner { height: 100%; background-color: var(--text-highlight); border-radius: 10px; }
-.interests-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; text-align: left; }
-.interest-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; }
-
-/* --- Estilos de Pestañas y Contenido --- */
-.about-main-content { flex-grow: 1; background-color: var(--bg-main); border-radius: 15px; padding: 2rem; box-shadow: 0 4px 15px var(--shadow-color); display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, 0.1); }
+.interests-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; text-align: left; }
+.interest-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; }
+.about-main-content { flex-grow: 1; background-color: var(--bg-main); border-radius: 15px; padding: 1.5rem 2rem; box-shadow: 0 4px 15px var(--shadow-color); display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, 0.1); }
 .tabs-container { display: flex; border-bottom: 2px solid var(--bg-accent); margin-bottom: 1.5rem; flex-shrink: 0; }
-.tab-link { background: none; border: none; color: var(--text-light); opacity: 0.7; padding: 1rem 1.5rem; cursor: pointer; font-size: 1rem; font-weight: bold; transition: all 0.3s ease; border-bottom: 3px solid transparent; transform: translateY(2px); }
+.tab-link { background: none; border: none; color: var(--text-light); opacity: 0.7; padding: 0.8rem 1.2rem; cursor: pointer; font-size: 0.95rem; font-weight: bold; transition: all 0.3s ease; border-bottom: 3px solid transparent; transform: translateY(2px); }
 .tab-link.active, .tab-link:hover { opacity: 1; color: var(--text-highlight); border-bottom-color: var(--text-highlight); }
-.tab-content-wrapper { overflow-y: auto; flex-grow: 1; }
+.tab-content-wrapper { flex-grow: 1; overflow: hidden; } /* Contenedor para el contenido que se muestra */
 .tab-content { display: none; animation: fadeIn 0.5s ease; }
 .tab-content.active { display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.tab-content h2 { margin-bottom: 1rem; color: var(--text-highlight); }
-.skills-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-.skill-card { background: var(--bg-accent); padding: 1rem; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.tab-content h2 { margin-bottom: 0.8rem; color: var(--text-highlight); font-size: 1.5rem; }
+.tab-content p { font-size: 0.95rem; }
+.skills-gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(90px, 1fr)); gap: 1.2rem; margin-top: 1.2rem; }
+.skill-card { background: var(--bg-accent); padding: 1rem; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .skill-card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px var(--shadow-color); }
-.skill-card img { width: 40px; height: 40px; }
-.skill-card span { font-weight: bold; font-size: 0.9rem; }
-.timeline { position: relative; padding-left: 30px; border-left: 2px solid var(--bg-accent); }
-.timeline-item { margin-bottom: 2rem; }
-.timeline-dot { position: absolute; left: -11px; width: 20px; height: 20px; background-color: var(--bg-main); border: 3px solid var(--text-highlight); border-radius: 50%; transition: transform 0.3s ease; }
+.skill-card img { width: 35px; height: 35px; }
+.skill-card span { font-weight: bold; font-size: 0.85rem; }
+.timeline { position: relative; padding-left: 25px; border-left: 2px solid var(--bg-accent); }
+.timeline-item { margin-bottom: 1.5rem; }
+.timeline-dot { position: absolute; left: -10px; width: 18px; height: 18px; background-color: var(--bg-main); border: 3px solid var(--text-highlight); border-radius: 50%; transition: transform 0.3s ease; }
 .timeline-item:hover .timeline-dot { transform: scale(1.2); }
-.timeline-date { font-weight: bold; color: var(--text-highlight); opacity: 0.8; font-size: 0.9rem; margin-bottom: 0.25rem; }
+.timeline-date { font-weight: bold; color: var(--text-highlight); opacity: 0.8; font-size: 0.85rem; margin-bottom: 0.25rem; }
 .timeline-content { background: var(--bg-accent); padding: 1rem; border-radius: 10px; }
-.timeline-content h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.timeline-content h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
 
 /* --- Página "Mis Proyectos" --- */
 .projects-section { width: 100%; padding: 2rem 1rem; background-color: var(--bg-accent); text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
@@ -132,10 +130,9 @@ footer { background-color: var(--header-footer-bg); padding: 1.5rem 2rem; displa
 /* --- Estilos para Escritorio (Pantalla Completa) --- */
 @media (min-width: 769px) {
     html, body { height: 100%; overflow: hidden; }
-    .page-wrapper, .main-content { height: 100%; overflow: hidden; }
+    .page-wrapper { height: 100%; }
+    .main-content { overflow: hidden; }
     .about-layout, .projects-section { height: 100%; }
-    .about-layout { overflow: hidden; }
-    .about-sidebar, .tab-content-wrapper, .projects-section { overflow-y: auto; }
 }
 
 /* --- Estilos para Móviles --- */
