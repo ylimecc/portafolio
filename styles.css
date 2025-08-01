@@ -63,40 +63,40 @@ footer { background-color: var(--header-footer-bg); padding: 1.2rem 2rem; displa
 /* --- Página "Acerca de Mí" (Diseño CV) --- */
 .about-layout { display: flex; flex-grow: 1; background-color: var(--bg-accent); gap: 1.5rem; padding: 1.5rem; align-items: stretch; }
 .about-sidebar { width: 320px; flex-shrink: 0; }
-.profile-card { height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-main); border-radius: 15px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 15px var(--shadow-color); border: 1px solid rgba(255, 255, 255, 0.1); }
-.profile-card .profile-picture { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--header-footer-bg); transition: transform 0.3s ease, box-shadow 0.3s ease; margin-bottom: 0.5rem; }
+.profile-card { height: 100%; display: flex; flex-direction: column; justify-content: center; background-color: var(--bg-main); border-radius: 15px; padding: 1.2rem; text-align: center; box-shadow: 0 4px 15px var(--shadow-color); border: 1px solid rgba(255, 255, 255, 0.1); }
+.profile-card .profile-picture { width: 110px; height: 110px; border-radius: 50%; object-fit: cover; border: 4px solid var(--header-footer-bg); transition: transform 0.3s ease, box-shadow 0.3s ease; margin-bottom: 0.5rem; }
 .profile-card:hover .profile-picture { transform: scale(1.1) rotate(5deg); box-shadow: 0 0 20px var(--text-highlight); }
-.profile-card h3 { color: var(--text-highlight); margin-bottom: 0.5rem; font-size: 1.2rem; }
-.profile-card p, .profile-subtitle { font-size: 0.9rem; color: var(--text-light); opacity: 0.8; line-height: 1.5; margin-bottom: 0.25rem; }
-.info-line { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1rem; font-size: 0.9rem; }
-.info-icon { width: 18px; height: 18px; fill: var(--text-highlight); flex-shrink: 0; }
+.profile-card h3 { color: var(--text-highlight); margin-bottom: 0.5rem; font-size: 1.1rem; }
+.profile-card p, .profile-subtitle { font-size: 0.85rem; color: var(--text-light); opacity: 0.8; line-height: 1.5; margin-bottom: 0.25rem; }
+.info-line { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 0.8rem; font-size: 0.85rem; }
+.info-icon { width: 16px; height: 16px; fill: var(--text-highlight); flex-shrink: 0; }
 .contact-link { text-decoration: none; color: var(--text-light); transition: color 0.3s ease; }
 .contact-link:hover { color: var(--text-highlight); }
-.sidebar-divider { border: 0; height: 1px; background-color: var(--bg-accent); margin: 1.5rem 0; }
-.sidebar-widget h4 { color: var(--text-highlight); margin-bottom: 1rem; font-size: 1.2rem; }
-.language-item { margin-bottom: 1rem; }
-.language-info { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 0.25rem; }
+.sidebar-divider { border: 0; height: 1px; background-color: var(--bg-accent); margin: 1.2rem 0; }
+.sidebar-widget h4 { color: var(--text-highlight); margin-bottom: 0.75rem; font-size: 1.1rem; }
+.language-item { margin-bottom: 0.75rem; }
+.language-info { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem; }
 .progress-bar { width: 100%; background-color: var(--bg-accent); border-radius: 10px; height: 8px; overflow: hidden; }
 .progress-bar-inner { height: 100%; background-color: var(--text-highlight); border-radius: 10px; }
-.about-main-content { flex-grow: 1; background-color: var(--bg-main); border-radius: 15px; padding: 1.5rem 2rem; box-shadow: 0 4px 15px var(--shadow-color); display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, 0.1); }
-.tabs-container { display: flex; border-bottom: 2px solid var(--bg-accent); margin-bottom: 1.5rem; flex-shrink: 0; }
-.tab-link { background: none; border: none; color: var(--text-light); opacity: 0.7; padding: 0.8rem 1.2rem; cursor: pointer; font-size: 0.95rem; font-weight: bold; transition: all 0.3s ease; border-bottom: 3px solid transparent; transform: translateY(2px); }
+.about-main-content { flex-grow: 1; background-color: var(--bg-main); border-radius: 15px; padding: 1.2rem 1.8rem; box-shadow: 0 4px 15px var(--shadow-color); display: flex; flex-direction: column; border: 1px solid rgba(255, 255, 255, 0.1); }
+.tabs-container { display: flex; border-bottom: 2px solid var(--bg-accent); margin-bottom: 1rem; flex-shrink: 0; }
+.tab-link { background: none; border: none; color: var(--text-light); opacity: 0.7; padding: 0.7rem 1.2rem; cursor: pointer; font-size: 0.9rem; font-weight: bold; transition: all 0.3s ease; border-bottom: 3px solid transparent; transform: translateY(2px); }
 .tab-link.active, .tab-link:hover { opacity: 1; color: var(--text-highlight); border-bottom-color: var(--text-highlight); }
 .tab-content-wrapper { flex-grow: 1; overflow: hidden; }
 .tab-content { display: none; animation: fadeIn 0.5s ease; }
 .tab-content.active { display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-.tab-content h2 { margin-bottom: 0.8rem; color: var(--text-highlight); font-size: 1.5rem; }
-.tab-content p { font-size: 0.95rem; }
-.skills-category { margin-bottom: 1.2rem; }
-.skills-category h4 { color: var(--text-highlight); border-bottom: 1px solid var(--bg-accent); padding-bottom: 0.5rem; margin-bottom: 0.75rem; }
+.tab-content h2 { margin-bottom: 0.7rem; color: var(--text-highlight); font-size: 1.4rem; }
+.tab-content p { font-size: 0.9rem; line-height: 1.5; }
+.skills-category { margin-bottom: 1rem; }
+.skills-category h4 { color: var(--text-highlight); border-bottom: 1px solid var(--bg-accent); padding-bottom: 0.4rem; margin-bottom: 0.6rem; font-size: 1rem; }
 .timeline { position: relative; padding-left: 25px; border-left: 2px solid var(--bg-accent); }
-.timeline-item { margin-bottom: 1.2rem; }
+.timeline-item { margin-bottom: 1rem; }
 .timeline-dot { position: absolute; left: -10px; width: 18px; height: 18px; background-color: var(--bg-main); border: 3px solid var(--text-highlight); border-radius: 50%; transition: transform 0.3s ease; }
 .timeline-item:hover .timeline-dot { transform: scale(1.2); }
-.timeline-content { background: var(--bg-accent); padding: 0.8rem 1rem; border-radius: 10px; }
-.timeline-content h3 { font-size: 1.05rem; margin-bottom: 0.25rem; }
-.timeline-subtitle { font-size: 0.85rem; opacity: 0.8; }
+.timeline-content { background: var(--bg-accent); padding: 0.7rem 1rem; border-radius: 10px; }
+.timeline-content h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+.timeline-subtitle { font-size: 0.8rem; opacity: 0.8; }
 
 /* --- Página "Mis Proyectos" --- */
 .projects-section { width: 100%; padding: 2rem 1rem; background-color: var(--bg-accent); text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; }
