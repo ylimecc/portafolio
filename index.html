@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<!-- El idioma por defecto: español -->
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Proyectos - Emily CA</title>
+    <title>Emily CA - Portafolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.ico" type="image/png">
 </head>
@@ -23,46 +24,22 @@
                     <li><a href="my-projects.html" data-lang="es">Mis Proyectos</a><a href="my-projects.html" data-lang="en" style="display:none;">My Projects</a></li>
                     <li><a href="blog.html" data-lang="es">Blogs</a><a href="blog.html" data-lang="en" style="display:none;">Blogs</a></li>
                 </ul>
+                <!-- Botón para cambiar de idioma -->
                 <button id="lang-toggle" class="lang-button">EN</button>
             </nav>
         </header>
 
         <main class="main-content">
-            <section class="projects-section">
-                <h2 data-lang="es">Mis Proyectos</h2><h2 data-lang="en" style="display:none;">My Projects</h2>
-                <div class="carousel-container">
-                    <div class="carousel-slides">
-                        
-                        <div class="carousel-slide">
-                            <img src="https://placehold.co/600x400/7b5dc8/FFFFFF?text=Proyecto+1" alt="Imagen del Proyecto 1" onerror="this.onerror=null;this.src='https://placehold.co/600x400/7b5dc8/FFFFFF?text=Proyecto+1';">
-                            <div class="slide-content">
-                                <h3 data-lang="es">Nombre del Proyecto 1</h3><h3 data-lang="en" style="display:none;">Project Name 1</h3>
-                                <p data-lang="es">Una breve descripción de este increíble proyecto. Explica el problema que resuelve y su propósito principal.</p><p data-lang="en" style="display:none;">A brief description of this incredible project. Explain the problem it solves and its main purpose.</p>
-                                <div class="project-tags"><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span class="skill-tag">JavaScript</span></div>
-                                <div class="project-links">
-                                    <a href="#" class="project-button" data-lang="es">Ver Demo</a><a href="#" class="project-button" data-lang="en" style="display:none;">View Demo</a>
-                                    <a href="#" class="project-button secondary" data-lang="es">Ver Código</a><a href="#" class="project-button secondary" data-lang="en" style="display:none;">View Code</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-slide">
-                            <img src="https://placehold.co/600x400/744daa/FFFFFF?text=Proyecto+2" alt="Imagen del Proyecto 2" onerror="this.onerror=null;this.src='https://placehold.co/600x400/744daa/FFFFFF?text=Proyecto+2';">
-                            <div class="slide-content">
-                                <h3 data-lang="es">Nombre del Proyecto 2</h3><h3 data-lang="en" style="display:none;">Project Name 2</h3>
-                                <p data-lang="es">Descripción del segundo proyecto. Quizás este usó un framework o una librería específica que quieras destacar.</p><p data-lang="en" style="display:none;">Description of the second project. Perhaps this one used a specific framework or library you want to highlight.</p>
-                                <div class="project-tags"><span class="skill-tag">React</span><span class="skill-tag">Node.js</span><span class="skill-tag">API Rest</span></div>
-                                <div class="project-links">
-                                    <a href="#" class="project-button" data-lang="es">Ver Demo</a><a href="#" class="project-button" data-lang="en" style="display:none;">View Demo</a>
-                                    <a href="#" class="project-button secondary" data-lang="es">Ver Código</a><a href="#" class="project-button secondary" data-lang="en" style="display:none;">View Code</a>
-                                </div>
-                            </div>
-                        </div>
-
+            <section class="hero">
+                <div class="content">
+                    <h2><span data-lang="es">Hola!<br>Soy Emily CA.</span><span data-lang="en" style="display:none;">Hello!<br>I'm Emily CA.</span></h2>
+                    <div class="text-container">
+                        <span id="dynamicText" class="dynamic-text"></span>
+                        <span id="cursor" class="cursor"></span>
                     </div>
-                    <button class="carousel-button prev-button">&#10094;</button>
-                    <button class="carousel-button next-button">&#10095;</button>
-                    <div class="carousel-dots"></div>
+                </div>
+                <div class="image">
+                    <img src="images/image.png" alt="Ilustración zorrito kawaii">
                 </div>
             </section>
         </main>
