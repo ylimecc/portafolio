@@ -29,6 +29,8 @@
 
         <main class="main-content">
             <div class="about-layout">
+
+                <!-- Columna Izquierda: Foto, Info, Idiomas, Intereses -->
                 <aside class="about-sidebar">
                     <div class="profile-card">
                         <div class="profile-image-container">
@@ -76,10 +78,79 @@
                         </div>
                     </div>
                 </aside>
-                <section class="about-main-content"></section>
+                
+                <!-- Columna Derecha: Contenido Principal con Pestañas -->
+                <section class="about-main-content">
+                    <div class="tabs-container">
+                        <button class="tab-link active" data-tab="biografia" data-lang="es">Biografía</button><button class="tab-link active" data-tab="biografia" data-lang="en" style="display:none;">Biography</button>
+                        <button class="tab-link" data-tab="habilidades" data-lang="es">Habilidades</button><button class="tab-link" data-tab="habilidades" data-lang="en" style="display:none;">Skills</button>
+                        <button class="tab-link" data-tab="experiencia" data-lang="es">Experiencia</button><button class="tab-link" data-tab="experiencia" data-lang="en" style="display:none;">Experience</button>
+                    </div>
+
+                    <div class="tab-content-wrapper">
+                        <!-- Contenido de la pestaña Biografía -->
+                        <div id="biografia" class="tab-content active">
+                            <h2 data-lang="es">Mi Trayectoria Profesional</h2><h2 data-lang="en" style="display:none;">My Professional Journey</h2>
+                            <p data-lang="es">Desde que escribí mi primera línea de código, supe que había encontrado mi pasión. Como Ingeniera en Sistemas, mi formación me dio una base sólida en lógica y resolución de problemas, pero es en el desarrollo web donde mi creatividad realmente cobra vida.</p><p data-lang="en" style="display:none;">Ever since I wrote my first line of code, I knew I had found my passion. As a Systems Engineer, my training gave me a solid foundation in logic and problem-solving, but it's in web development where my creativity truly comes to life.</p>
+                            <p data-lang="es">Me especializo en la creación de experiencias de usuario fluidas y dinámicas, utilizando las tecnologías más modernas para construir aplicaciones web rápidas, responsivas y visualmente atractivas.</p><p data-lang="en" style="display:none;">I specialize in creating fluid and dynamic user experiences, using the most modern technologies to build fast, responsive, and visually appealing web applications.</p>
+                        </div>
+
+                        <!-- Contenido de la pestaña Habilidades -->
+                        <div id="habilidades" class="tab-content">
+                            <h2 data-lang="es">Mi Arsenal Tecnológico</h2><h2 data-lang="en" style="display:none;">My Tech Stack</h2>
+                            <p data-lang="es">Estas son las herramientas y tecnologías que domino para transformar ideas en realidad.</p><p data-lang="en" style="display:none;">These are the tools and technologies I master to turn ideas into reality.</p>
+                            <div class="skills-gallery">
+                                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="HTML5"><span>HTML5</span></div>
+                                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/w3_css3/w3_css3-icon.svg" alt="CSS3"><span>CSS3</span></div>
+                                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg" alt="JavaScript"><span>JavaScript</span></div>
+                                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" alt="React"><span>React</span></div>
+                                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/nodejs/nodejs-icon.svg" alt="Node.js"><span>Node.js</span></div>
+                                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/python/python-icon.svg" alt="Python"><span>Python</span></div>
+                                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg" alt="MySQL"><span>SQL</span></div>
+                                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="MongoDB"><span>MongoDB</span></div>
+                                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git"><span>Git</span></div>
+                                <div class="skill-card"><img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="Figma"><span>Figma</span></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contenido de la pestaña Experiencia -->
+                        <div id="experiencia" class="tab-content">
+                            <h2 data-lang="es">Experiencia Profesional</h2><h2 data-lang="en" style="display:none;">Professional Experience</h2>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2022 - <span data-lang="es">Presente</span><span data-lang="en" style="display:none;">Present</span></div>
+                                    <div class="timeline-content">
+                                        <h3>Web Developer Freelance</h3>
+                                        <p data-lang="es">Desarrollo de sitios web y aplicaciones a medida para clientes de diversas industrias, enfocándome en el rendimiento y la experiencia de usuario.</p><p data-lang="en" style="display:none;">Development of custom websites and applications for clients in various industries, focusing on performance and user experience.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-date">2020 - 2022</div>
+                                    <div class="timeline-content">
+                                        <h3 data-lang="es">Desarrolladora Jr. en Tech Solutions</h3><h3 data-lang="en" style="display:none;">Jr. Developer at Tech Solutions</h3>
+                                        <p data-lang="es">Colaboré en el mantenimiento y desarrollo de nuevas funcionalidades para una plataforma SaaS, trabajando con un equipo ágil.</p><p data-lang="en" style="display:none;">Collaborated in the maintenance and development of new features for a SaaS platform, working with an agile team.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </main>
-        <footer></footer>
+        
+        <footer>
+            <div class="footer-brand"><span data-lang="es">Diseñado por Emilyrcc</span><span data-lang="en" style="display:none;">Designed by Emilyrcc</span></div>
+            <div class="footer-copyright">Copyright &copy; 2025</div>
+            <div class="footer-social">
+                 <a href="https://www.facebook.com/emilyrcc/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"></path></svg></a>
+                <a href="https://www.instagram.com/emilyrcc_/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.556.556.9 1.112 1.153 1.772.248.638.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122s-.015 3.056-.06 4.122c-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772c-.556.556-1.112.9-1.772 1.153-.638.248-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06s-3.056-.015-4.122-.06c-1.065-.05-1.79-.218-2.428-.465a4.883 4.883 0 0 1-1.772-1.153c-.556-.556-.9-1.112-1.153 1.772-.248-.638-.415-1.363-.465-2.428C2.015 15.056 2 14.717 2 12s.015-3.056.06-4.122c.05-1.065.218-1.79.465-2.428a4.883 4.883 0 0 1 1.153-1.772c.556-.556 1.112.9 1.772-1.153.638-.248 1.363-.415 2.428-.465C8.944 2.015 9.283 2 12 2zm0 1.8c-2.649 0-2.984.01-4.04.057-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.048 1.056-.058 1.391-.058 4.04s.01 2.984.058 4.04c.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.057.048 1.391.058 4.04.058s2.984-.01 4.04-.058c.975-.045 1.504-.207 1.857-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353-.3-.882.344-1.857.048-1.056.058-1.391.058-4.04s-.01-2.984-.058-4.04c-.045-.975-.207-1.504-.344-1.857a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344C14.984 3.81 14.649 3.8 12 3.8zm0 3.35c-2.849 0-5.156 2.307-5.156 5.156s2.307 5.156 5.156 5.156 5.156-2.307 5.156-5.156-2.307-5.156-5.156-5.156zm0 8.704c-1.96 0-3.548-1.588-3.548-3.548s1.588-3.548 3.548-3.548 3.548 1.588 3.548 3.548-1.588 3.548-3.548 3.548zm6.406-8.334c-.766 0-1.386.62-1.386 1.386s.62 1.386 1.386 1.386 1.386-.62 1.386-1.386-.62-1.386-1.386-1.386z"></path></svg></a>
+                <a href="https://www.twitch.tv/emilyrcc" target="_blank" rel="noopener noreferrer" aria-label="Visita mi Twitch"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.571 4.714h1.715v5.143H11.57zM8.286 4.714h1.714v5.143H8.286zM2 0L0 4.571v15.429h5.143V24l4.571-4h3.429l6.857-6.857V0H2zm18.857 13.143l-3.428 3.428h-3.429l-3.143 3.143v-3.143H6.857V1.714h14v11.429z"></path></svg></a>
+                <a href="https://x.com/emilyrcc_/" target="_blank" rel="noopener noreferrer" aria-label="Visita mi X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg></a>
+                <a href="https://github.com/ylimecc" target="_blank" rel="noopener noreferrer" aria-label="Visita mi GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.949 3.125 9.138 7.438 10.619.547.1.747-.238.747-.528 0-.26-.01-1.112-.015-2.062-3.037.662-3.675-1.325-3.675-1.325-.5-1.275-1.219-1.613-1.219-1.613-1-.688.075-.675.075-.675 1.1.075 1.675 1.138 1.675 1.138.975 1.675 2.563 1.188 3.188.907.1-.7.375-1.188.688-1.463-2.437-.275-4.994-1.212-4.994-5.412 0-1.2.425-2.175 1.125-2.938-.113-.275-.488-1.387.106-2.887 0 0 .913-.288 3 .112.863-.238 1.788-.363 2.7-.363.912 0 1.837.125 2.7.363 2.087-1.4 3-.112 3-.112.6 1.5.225 2.612.113 2.887.7.763 1.125 1.738 1.125 2.938 0 4.212-2.563 5.137-5 5.412.4.35.75 1.05.75 2.113 0 1.525-.013 2.75-.013 3.125 0 .287.25.625.75.525C20.875 21.138 24 16.949 24 12c0-5.523-4.477-10-10-10z"></path></svg></a>
+            </div>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
