@@ -83,7 +83,7 @@ footer { background-color: var(--header-footer-bg); padding: 1.2rem 2rem; displa
 .tabs-container { display: flex; border-bottom: 2px solid var(--bg-accent); margin-bottom: 1.5rem; flex-shrink: 0; }
 .tab-link { background: none; border: none; color: var(--text-light); opacity: 0.7; padding: 0.8rem 1.2rem; cursor: pointer; font-size: 0.95rem; font-weight: bold; transition: all 0.3s ease; border-bottom: 3px solid transparent; transform: translateY(2px); }
 .tab-link.active, .tab-link:hover { opacity: 1; color: var(--text-highlight); border-bottom-color: var(--text-highlight); }
-.tab-content-wrapper { flex-grow: 1; overflow: hidden; } /* Contenedor para el contenido que se muestra */
+.tab-content-wrapper { flex-grow: 1; overflow: hidden; }
 .tab-content { display: none; animation: fadeIn 0.5s ease; }
 .tab-content.active { display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
