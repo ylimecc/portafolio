@@ -200,7 +200,7 @@ footer {
 }
 
 .about-sidebar {
-    width: 300px;
+    width: 320px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -213,6 +213,7 @@ footer {
     padding: 1.5rem;
     text-align: center;
     box-shadow: 0 4px 15px var(--shadow-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .profile-image-container {
@@ -225,22 +226,40 @@ footer {
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid var(--header-footer-bg);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-card:hover .profile-picture {
     transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 20px var(--text-highlight);
 }
 
 .profile-card h3 {
     color: var(--text-highlight);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
-.profile-card p {
+.profile-card p, .profile-subtitle {
     font-size: 0.9rem;
     color: var(--text-light);
     opacity: 0.8;
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.info-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.info-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--text-highlight);
 }
 
 .sidebar-widget h4 {
@@ -257,6 +276,9 @@ footer {
 .sidebar-widget .cta-button {
     margin-top: 1rem;
     padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .about-main-content {
@@ -267,6 +289,7 @@ footer {
     box-shadow: 0 4px 15px var(--shadow-color);
     display: flex;
     flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tabs-container {
@@ -317,19 +340,42 @@ footer {
 
 .tab-content h2 {
     margin-bottom: 1rem;
+    color: var(--text-highlight);
 }
 
-.skills-grid {
+.skills-gallery {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1.5rem;
     margin-top: 1.5rem;
 }
 
-.skill-item {
+.skill-card {
     background: var(--bg-accent);
     padding: 1rem;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--shadow-color);
+}
+
+.skill-card img {
+    width: 40px;
+    height: 40px;
+}
+
+.skill-card span {
+    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .timeline {
@@ -340,11 +386,16 @@ footer {
 .timeline-item { margin-bottom: 2rem; }
 .timeline-dot {
     position: absolute;
-    left: -9px;
-    width: 16px;
-    height: 16px;
-    background-color: var(--text-highlight);
+    left: -11px; /* Ajustado para centrar */
+    width: 20px;
+    height: 20px;
+    background-color: var(--bg-main);
+    border: 3px solid var(--text-highlight);
     border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
 }
 .timeline-date {
     font-weight: bold;
@@ -352,6 +403,11 @@ footer {
     opacity: 0.8;
     font-size: 0.9rem;
     margin-bottom: 0.25rem;
+}
+.timeline-content {
+    background: var(--bg-accent);
+    padding: 1rem;
+    border-radius: 10px;
 }
 .timeline-content h3 {
     font-size: 1.2rem;
@@ -532,7 +588,6 @@ footer {
 /* --- ESTILOS PARA MÓVILES --- */
 /* ======================================================= */
 @media (max-width: 768px) {
-    /* --- Reset para layout de pantalla completa de escritorio --- */
     html, body {
         height: auto;
         overflow: auto;
@@ -542,44 +597,25 @@ footer {
         padding: 1rem 1.5rem;
     }
 
-    /* --- Estilos para la página de Inicio en móvil --- */
+    .hero, .about-layout {
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+
+    .about-sidebar {
+        width: 100%;
+    }
+
     .hero {
         flex-direction: column-reverse;
         text-align: center;
-        padding: 2rem 1.5rem;
-        gap: 2rem;
     }
 
     .image img {
         max-height: 40vh;
     }
 
-    /* --- Estilos para la página "Acerca de Mí" en móvil --- */
-    .about-layout {
-        flex-direction: column; /* Apila las columnas */
-        padding: 1rem;
-        gap: 1.5rem;
-    }
-
-    .about-sidebar,
-    .about-main-content {
-        width: 100%; /* Ocupan todo el ancho */
-    }
-    
-    .about-main-content {
-        padding: 1.5rem;
-    }
-    
-    .tabs-container {
-        margin-bottom: 1rem;
-    }
-    
-    .tab-link {
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
-    }
-
-    /* --- Footer en móvil --- */
     footer {
         grid-template-columns: 1fr;
         text-align: center;
@@ -592,7 +628,6 @@ footer {
         text-align: center;
     }
 
-    /* --- Reglas del menú para móvil --- */
     nav ul {
         display: flex;
         flex-direction: column;
