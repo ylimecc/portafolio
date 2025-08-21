@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- LÓGICA PARA EL MENÚ HAMBURGUESA ---
+    // --- MENÚ HAMBURGUESA ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav ul');
     if (menuToggle && navMenu) {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // --- LÓGICA PARA LA ANIMACIÓN DE TEXTO (TYPEWRITER) ---
+    // --- ANIMACIÓN DE TEXTO (TYPEWRITER) ---
     const dynamicTextElement = document.getElementById("dynamicText");
     if (dynamicTextElement) {
         const texts = {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         let textIndex = 0;
         let currentLangForTyping = 'es';
-        let timeoutId; // Variable para controlar los timeouts
+        let timeoutId;
 
         // Función para detener cualquier animación en curso
         const stopAnimation = () => {
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // --- LÓGICA PARA EL CARRUSEL DE PROYECTOS ---
+    // --- CARRUSEL DE PROYECTOS ---
     const carousel = document.querySelector('.carousel-slides');
     if (carousel) {
         const slides = Array.from(carousel.children);
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // --- LÓGICA PARA LAS PESTAÑAS DE "ACERCA DE MÍ" ---
+    // --- PESTAÑAS DE "ACERCA DE MÍ" ---
     const tabsContainer = document.querySelector('.tabs-container');
     if (tabsContainer) {
         tabsContainer.addEventListener('click', (e) => {
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // --- LÓGICA PARA CAMBIAR DE IDIOMA ---
+    // --- CAMBIAR DE IDIOMA ---
     const langToggle = document.getElementById('lang-toggle');
     const langElements = document.querySelectorAll('[data-lang]');
 
