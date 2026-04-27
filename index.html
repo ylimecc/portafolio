@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Emily Castellanos — Ingeniería en Sistemas, desarrollador web.">
+  <title>Emily Castellanos — Portafolio</title>
+  <meta name="theme-color" content="#0a0f1c">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Open Graph (LinkedIn, WhatsApp, Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Emily Castellanos — Portafolio">
+  <meta property="og:description" content="Estudiante de Ingeniería en Sistemas en la Universidad Kuepa. Construyo sitios web y, pronto, aplicaciones. Mira mis certificaciones y proyectos.">
+  <meta property="og:image" content="img/profile.jpg">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Emily Castellanos — Portafolio">
+  <meta name="twitter:description" content="Estudiante de Ingeniería en Sistemas en la Universidad Kuepa. Construyo sitios web y, pronto, aplicaciones.">
+  <meta name="twitter:image" content="img/profile.jpg">
+
+  <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jetbrainsmono-latin.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <a href="#inicio" class="skip-link">Saltar al contenido</a>
+
+  <!-- NAV -->
+  <header class="nav">
+    <a href="#inicio" class="nav__brand">EC<span class="nav__cursor">_</span></a>
+    <button class="nav__toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="nav__menu" id="menu">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#certificaciones">Certificaciones</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <p class="hero__eyebrow">// portafolio · 2026</p>
+      <h1 class="hero__title">
+        Hola, soy <em>Emily Castellanos</em>.<br>
+        Construyo <span class="accent">sitios web</span> y, pronto, aplicaciones.
+      </h1>
+      <p class="hero__lead">
+        Estudiante de Ingeniería en Sistemas en la Universidad Kuepa - México.<br>
+        Aquí encontrarás mis certificaciones, mis primeros proyectos y lo que estoy construyendo a continuación.
+      </p>
+      <a href="#proyectos" class="hero__cta">Ver proyectos →</a>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="about" id="sobre-mi">
+      <p class="section__label">01 — Sobre mí</p>
+      <div class="about__grid">
+        <div class="about__text">
+          <img src="img/profile.jpg" alt="Foto de Emily Castellanos" class="about__avatar" loading="lazy" width="576" height="576">
+          <p>
+            Estudio Ingeniería en Sistemas en la <strong>Universidad Kuepa</strong>, en México.
+            Mi enfoque está en el desarrollo web: diseñar y construir sitios usables,
+            claros y bien ejecutados.
+          </p>
+          <p>
+            He completado <strong>certificaciones</strong> en distintas áreas del desarrollo y la tecnología.
+            Hasta ahora he publicado <strong>dos sitios web</strong> y actualmente estoy preparando
+            mis primeras aplicaciones — quiero ofrecer a mis clientes soluciones tanto en web como en móvil.
+          </p>
+        </div>
+        <ul class="about__skills">
+          <li>Desarrollo web</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>Diseño responsivo</li>
+          <li>Git & GitHub</li>
+          <li>Aprendizaje continuo</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CERTIFICACIONES -->
+    <section class="certs" id="certificaciones">
+      <p class="section__label">02 — Certificaciones</p>
+      <p class="certs__lead">
+        Certificaciones obtenidas a lo largo de mi formación. Cada una representa una habilidad o área que he estudiado y aplicado.
+      </p>
+
+      <div class="certs__grid">
+
+        <article class="cert" data-num="01" data-issuer="cisco">
+          <header class="cert__header">
+            <span class="cert__num">01</span>
+            <span class="cert__year">2026</span>
+          </header>
+          <h3 class="cert__title">CCNA: Introducción a las Redes</h3>
+          <p class="cert__issuer">Cisco Networking Academy</p>
+        </article>
+
+        <article class="cert" data-num="02" data-issuer="infop">
+          <header class="cert__header">
+            <span class="cert__num">02</span>
+            <span class="cert__year">2024</span>
+          </header>
+          <h3 class="cert__title">Programar con Python</h3>
+          <p class="cert__issuer">Instituto Nacional de Formación Profesional — INFOP VIRTUAL</p>
+        </article>
+
+        <article class="cert" data-num="03" data-issuer="uk">
+          <header class="cert__header">
+            <span class="cert__num">03</span>
+            <span class="cert__year">2024</span>
+          </header>
+          <h3 class="cert__title">Certificación en Inteligencia Artificial Aplicada 2.ª Edición</h3>
+          <p class="cert__issuer">Universidad Kuepa</p>
+        </article>
+
+        <article class="cert" data-num="04" data-issuer="uk">
+          <header class="cert__header">
+            <span class="cert__num">04</span>
+            <span class="cert__year">2024</span>
+          </header>
+          <h3 class="cert__title">Comunicación Profesional Efectiva II</h3>
+          <p class="cert__issuer">Universidad Kuepa</p>
+        </article>
+
+        <article class="cert" data-num="05" data-issuer="uk">
+          <header class="cert__header">
+            <span class="cert__num">05</span>
+            <span class="cert__year">2024</span>
+          </header>
+          <h3 class="cert__title">Google Sheets Avanzado</h3>
+          <p class="cert__issuer">Universidad Kuepa</p>
+        </article>
+
+        <article class="cert" data-num="06" data-issuer="funadeh">
+          <header class="cert__header">
+            <span class="cert__num">06</span>
+            <span class="cert__year">2024</span>
+          </header>
+          <h3 class="cert__title">Diseño Web HTML5 y WordPress</h3>
+          <p class="cert__issuer">FUNADEH — Fundación Nacional para el desarrollo de Honduras</p>
+        </article>
+
+        <article class="cert" data-num="07" data-issuer="funadeh">
+          <header class="cert__header">
+            <span class="cert__num">07</span>
+            <span class="cert__year">2024</span>
+          </header>
+          <h3 class="cert__title">Bases de Datos</h3>
+          <p class="cert__issuer">FUNADEH — Fundación Nacional para el desarrollo de Honduras</p>
+        </article>
+
+        <article class="cert" data-num="08" data-issuer="funadeh">
+          <header class="cert__header">
+            <span class="cert__num">08</span>
+            <span class="cert__year">2024</span>
+          </header>
+          <h3 class="cert__title">Impresión 3D</h3>
+          <p class="cert__issuer">FUNADEH — Fundación Nacional para el desarrollo de Honduras</p>
+        </article>
+
+        <article class="cert" data-num="09" data-issuer="funadeh">
+          <header class="cert__header">
+            <span class="cert__num">09</span>
+            <span class="cert__year">2024</span>
+          </header>
+          <h3 class="cert__title">MS Excel Avanzado</h3>
+          <p class="cert__issuer">FUNADEH — Fundación Nacional para el desarrollo de Honduras</p>
+        </article>
+
+        <article class="cert" data-num="10" data-issuer="oracle">
+          <header class="cert__header">
+            <span class="cert__num">10</span>
+            <span class="cert__year">2023</span>
+          </header>
+          <h3 class="cert__title">Java Fundamentals</h3>
+          <p class="cert__issuer">Oracle</p>
+        </article>
+
+        <article class="cert" data-num="11" data-issuer="funadeh">
+          <header class="cert__header">
+            <span class="cert__num">11</span>
+            <span class="cert__year">2017</span>
+          </header>
+          <h3 class="cert__title">Inglés para Servicio al Cliente</h3>
+          <p class="cert__issuer">FUNADEH — Fundación Nacional para el desarrollo de Honduras</p>
+        </article>
+
+        <article class="cert" data-num="12" data-issuer="funadeh">
+          <header class="cert__header">
+            <span class="cert__num">12</span>
+            <span class="cert__year">2017</span>
+          </header>
+          <h3 class="cert__title">Photoshop</h3>
+          <p class="cert__issuer">FUNADEH — Fundación Nacional para el desarrollo de Honduras</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section class="work" id="proyectos">
+      <p class="section__label">03 — Proyectos</p>
+
+      <article class="project">
+        <div class="project__visual" data-color="cyan">
+          <picture>
+            <source srcset="img/clinimedics.webp" type="image/webp">
+            <img src="img/clinimedics.png" alt="Logo de Clinimedics" loading="lazy" width="600" height="128">
+          </picture>
+        </div>
+        <div class="project__body">
+          <p class="project__meta">2026 · Sitio web</p>
+          <h3 class="project__title">Clinimedics</h3>
+          <p class="project__desc">
+            Directorio médico mexicano que conecta a pacientes con profesionales de la salud,
+            facilitando la búsqueda de doctores, clínicas y especialidades en todo el país.
+          </p>
+          <a href="https://www.clinimedics.com/" class="project__link" target="_blank" rel="noopener">Visitar el sitio →</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project__visual" data-color="violet">
+          <picture>
+            <source srcset="img/enarmre.webp" type="image/webp">
+            <img src="img/enarmre.png" alt="Logo de EnarmRE" loading="lazy" width="600" height="600">
+          </picture>
+        </div>
+        <div class="project__body">
+          <p class="project__meta">2026 · Sitio web</p>
+          <h3 class="project__title">EnarmRE</h3>
+          <p class="project__desc">
+            Curso en línea para médicos mexicanos que se preparan para el ENARM
+            (Examen Nacional de Aspirantes a Residencias Médicas), con contenido estructurado
+            para optimizar el estudio y aumentar las probabilidades de obtener una plaza.
+          </p>
+          <a href="https://www.enarmre.com/" class="project__link" target="_blank" rel="noopener">Visitar el sitio →</a>
+        </div>
+      </article>
+
+      <p class="work__note">
+        <span>Próximamente</span> · Estoy trabajando en mis primeras aplicaciones.
+        Vuelve pronto para verlas aquí.
+      </p>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto">
+      <p class="section__label">04 — Contacto</p>
+      <h2 class="contact__title">¿Trabajamos juntos?</h2>
+      <p class="contact__lead">
+        Estoy disponible para nuevos proyectos web y abierto a colaboraciones.
+        Escríbeme y te respondo lo antes posible.
+      </p>
+      <a href="mailto:photonpounce@gmail.com" class="contact__email">photonpounce@gmail.com</a>
+      <ul class="contact__social">
+        <li><a href="https://www.linkedin.com/in/emilyrcc/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Emily R. Castellanos · <span class="footer__code">&lt;/&gt;</span> con cariño en México.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

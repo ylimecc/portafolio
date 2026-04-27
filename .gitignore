@@ -1,0 +1,22 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+ehthumbs_vista.db
+$RECYCLE.BIN/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.code-workspace
+
+# Backups
+*.bak
+*.tmp
+
+# OneDrive (archivos de sincronización)
+*.lnk
