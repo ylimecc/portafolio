@@ -484,6 +484,10 @@ section:last-child { border-bottom: none; }
     radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.40), transparent 55%),
     linear-gradient(135deg, #29150d 0%, #2e1b13 100%);
 }
+/* Sunly es un ícono de app: bordes redondeados estilo iOS */
+.project__visual[data-color="coral"] img {
+  border-radius: 22%;
+}
 
 /* <picture> transparente al layout: img queda como hijo flex directo */
 .project__visual picture { display: contents; }
