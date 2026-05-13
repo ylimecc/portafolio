@@ -484,8 +484,18 @@ section:last-child { border-bottom: none; }
     radial-gradient(circle at 80% 80%, rgba(244, 114, 182, 0.40), transparent 55%),
     linear-gradient(135deg, #29150d 0%, #2e1b13 100%);
 }
+.project__visual[data-color="emerald"] {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(52, 211, 153, 0.50), transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.40), transparent 55%),
+    linear-gradient(135deg, #0d2920 0%, #13302a 100%);
+}
 /* Sunly es un ícono de app: bordes redondeados estilo iOS */
 .project__visual[data-color="coral"] img {
+  border-radius: 22%;
+}
+/* SubFlow también es un ícono de app: bordes redondeados estilo iOS */
+.project__visual[data-color="emerald"] img {
   border-radius: 22%;
 }
 
