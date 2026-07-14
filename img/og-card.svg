@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1" stroke-opacity="0.035"/>
+    </pattern>
+  </defs>
+
+  <!-- Base midnight -->
+  <rect width="1200" height="630" fill="#0a0f1c"/>
+
+  <!-- Atmospheric glows -->
+  <ellipse cx="180" cy="80"  rx="520" ry="290" fill="#2dd4bf" opacity="0.11"/>
+  <ellipse cx="1020" cy="560" rx="470" ry="270" fill="#38bdf8" opacity="0.09"/>
+  <ellipse cx="600" cy="320" rx="340" ry="200" fill="#c084fc" opacity="0.04"/>
+
+  <!-- Subtle grid -->
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Eyebrow -->
+  <text x="80" y="100"
+        font-family="Consolas, 'Courier New', ui-monospace, monospace"
+        font-size="22" font-weight="500" fill="#64748b" letter-spacing="6">
+    // PORTAFOLIO · 2026
+  </text>
+
+  <!-- Brand mark corner -->
+  <text x="1120" y="105"
+        font-family="Consolas, 'Courier New', ui-monospace, monospace"
+        font-size="44" font-weight="700" fill="#2dd4bf" text-anchor="end">
+    &lt;/&gt;
+  </text>
+
+  <!-- Name -->
+  <text x="80" y="270"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="104" font-weight="500" font-style="italic"
+        fill="url(#accent)" letter-spacing="-2">
+    Emily Castellanos
+  </text>
+
+  <!-- Tagline -->
+  <text x="80" y="375"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="46" font-weight="400" fill="#e8edf5">
+    Construyo sitios web
+  </text>
+  <text x="80" y="438"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="46" font-weight="400" fill="#e8edf5">
+    y, pronto, aplicaciones.
+  </text>
+
+  <!-- Footer -->
+  <line x1="80" y1="515" x2="180" y2="515" stroke="#2dd4bf" stroke-width="2"/>
+  <text x="80" y="558"
+        font-family="Consolas, 'Courier New', ui-monospace, monospace"
+        font-size="22" fill="#94a3b8">
+    Ingeniería en Sistemas · Universidad Kuepa · México
+  </text>
+</svg>
