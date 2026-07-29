@@ -471,6 +471,7 @@ document.addEventListener("visibilitychange", () => { last = null; });
 reset();
 requestAnimationFrame(frame);
 })();
+if ("serviceWorker" in navigator) navigator.serviceWorker.register("/portafolio/sw.js");
 </script>
 </body>
 </html>
