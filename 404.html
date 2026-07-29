@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Página no encontrada — pero hay un perrito que necesita quien lo acompañe.">
+  <meta name="description" content="Página no encontrada, pero Benny necesita quien lo acompañe.">
   <meta name="robots" content="noindex">
   <title>404 · Emily Castellanos</title>
   <meta name="theme-color" content="#0a0f1c">
@@ -85,18 +85,19 @@
 
     .eyebrow {
       font-family: var(--mono);
-      font-size: 0.85rem;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-    h1 {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: clamp(1.7rem, 4.5vw, 2.6rem);
+      font-weight: 700;
+      font-size: clamp(1.7rem, 4.5vw, 2.5rem);
       line-height: 1.2;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .sub {
+      font-family: var(--serif);
+      font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+      color: var(--ink);
       text-wrap: balance;
     }
-    h1 em { font-style: italic; color: var(--accent); }
+    .sub em { font-style: italic; color: var(--accent); }
     .lead {
       color: var(--ink-soft);
       max-width: 34rem;
@@ -153,11 +154,11 @@
   </header>
 
   <main class="wrap">
-    <p class="eyebrow">// error · 404</p>
-    <h1>Esta página se fue a perseguir <em>palomas</em>.</h1>
+    <h1 class="eyebrow">// error · 404</h1>
+    <p class="sub">Esta página se fue a perseguir <em>palomas</em>.</p>
     <p class="lead">
-      El enlace que seguiste no existe — o ya no. Mientras encuentras el camino
-      de vuelta, el perrito necesita quien lo acompañe.
+      El enlace que seguiste no existe, o ya no. Mientras encuentras el camino
+      de vuelta, Benny necesita quien lo acompañe.
     </p>
 
     <div class="card">
@@ -193,14 +194,14 @@ const FONT = "'JetBrains Mono',Consolas,monospace";
    K contorno · O pelo castaño · D oreja/cola oscuras · W pecho crema */
 const PAL = { K:"#1a1208", O:"#b5651d", D:"#7a4310", W:"#f2e3c4" };
 const BODY = [
-".................KKKKKK.....",
-"..KK............KOOOOOOK....",
-".KDDK..........KDDOOOOOK....",
-"KDDDK........KDDDOOOOOOK....",
-"KDDDK.......KDDDDOOOKKOOOKK.",
-".KDDK.......KDDDDOOOKKOOOKK.",
-"..KDK.......KDDDOOOOOOOOOOOK",
-"...KK........KDDOOOOOOOKKKK.",
+".KKK.............KKKKKK.....",
+"KDDDK...........KOOOOOOK....",
+"KDDDK..........KDDOOOOOK....",
+"KDDDDK.......KDDDOOOOOOK....",
+".KDDDK......KDDDDOOOKKOOOKK.",
+"..KDDK......KDDDDOOOKKOOOKK.",
+"...KDK......KDDDOOOOOOOOOOOK",
+"....KDK......KDDOOOOOOOKKKK.",
 "....KKKKKKKKKKKOOWWWWK......",
 "....KOOOOOOOOOOOOWWWWWK.....",
 "....KOOOOOOOOOOOOWWWWWK.....",
