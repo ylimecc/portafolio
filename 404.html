@@ -189,28 +189,43 @@ const C = {
 const FG = "#e8edf5", MUTED = "#94a3b8";
 const FONT = "'JetBrains Mono',Consolas,monospace";
 
-/* ---------- sprite del perrito (22x13, 3px por celda) ----------
-   O pelo miel · W panza/patas blancas · B ojo y nariz · D sombra   */
-const PAL = { O:"#e8963e", W:"#fdf3e3", B:"#241d1a", D:"#b06c24" };
+/* ---------- sprite del perrito (28x20, 3px por celda) ----------
+   K contorno · O pelo castaño · D oreja/cola oscuras · W pecho crema */
+const PAL = { K:"#1a1208", O:"#b5651d", D:"#7a4310", W:"#f2e3c4" };
 const BODY = [
-"..............O...O...",
-"..............OO.OO...",
-".............OOOOOOO..",
-"..O..........OOOOBOO..",
-".OO..........OOOOOWWB.",
-".OO..........OOOOWW...",
-"..OO.OOOOOOOOOOOOO....",
-"...OOOOOOOOOOOOOOO....",
-"...OOOWWWWWWWWOOOO....",
-"....OOWWWWWWWWOOO.....",
-"....OOO......OOO......",
+".................KKKKKK.....",
+"..KK............KOOOOOOK....",
+".KDDK..........KDDOOOOOK....",
+"KDDDK........KDDDOOOOOOK....",
+"KDDDK.......KDDDDOOOKKOOOKK.",
+".KDDK.......KDDDDOOOKKOOOKK.",
+"..KDK.......KDDDOOOOOOOOOOOK",
+"...KK........KDDOOOOOOOKKKK.",
+"....KKKKKKKKKKKOOWWWWK......",
+"....KOOOOOOOOOOOOWWWWWK.....",
+"....KOOOOOOOOOOOOWWWWWK.....",
+"....KOOOOOOOOOOOOWWWWK......",
+"....KOOOOOOOOOOOWWWWK.......",
+".....KOOOOOOOOOOWWWK........",
+".....KOOOOOOOOOOWWK.........",
+"......KKOOOOOOOKKK..........",
 ];
-const LEGS_A = ["...OO.........OO......", "...WW.........WW......"];
-const LEGS_B = [".....OO.....OO........", ".....WW.....WW........"];
+const LEGS_A = [
+".....KOK......KOK...........",
+".....KOK......KOK...........",
+"....KOOK.....KOOK...........",
+"....KKK......KKK............",
+];
+const LEGS_B = [
+".......KOK..KOK.............",
+".......KOK..KOK.............",
+".......KOOK.KOOK............",
+"........KK...KK.............",
+];
 const FRAME_A = BODY.concat(LEGS_A);
 const FRAME_B = BODY.concat(LEGS_B);
-const FRAME_DEAD = FRAME_A.map(r => r.replace("OOOOBOO", "OOOODOO"));
-const SPR = 3, DOG_X = 56, DOG_W = 22*SPR, DOG_H = 13*SPR;
+const FRAME_DEAD = FRAME_A.map((r,i) => (i===4||i===5) ? r.replace("OKKO","ODDO") : r);
+const SPR = 3, DOG_X = 56, DOG_W = 28*SPR, DOG_H = 20*SPR;
 
 /* ---------- sprite de la paloma (14x8, 3px por celda) ---------- */
 const PALB = { G:"#9aa5b1", D:"#6b7684", O:"#f59e0b", B:"#1e293b" };
@@ -329,8 +344,8 @@ function step(dt){
   }
 
   // colisión (caja con margen de perdón)
-  const dx = DOG_X + 9, dw = DOG_W - 22;
-  const dy = GROUND - DOG_H + dogY + 5, dh = DOG_H - 8;
+  const dx = DOG_X + 12, dw = DOG_W - 32;
+  const dy = GROUND - DOG_H + dogY + 6, dh = DOG_H - 10;
   for (const o of obstacles){
     const ox = o.x + 2, ow = o.tw - 4;
     const oy = (o.type === "bird" ? o.y : GROUND - o.h) + 2, oh = o.h - 4;
