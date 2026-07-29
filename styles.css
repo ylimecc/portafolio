@@ -1,5 +1,5 @@
 /* =========================================
-   PORTAFOLIO — Mobile-first, vanilla CSS
+   PORTAFOLIO: Mobile-first, vanilla CSS
    Estética: editor de código / dev moderno
    Fondo midnight + acento cian/teal
    ========================================= */
@@ -23,16 +23,16 @@
 }
 
 :root {
-  /* Paleta — modo oscuro tipo editor */
+  /* Paleta: modo oscuro tipo editor */
   --bg: #0a0f1c;          /* midnight base */
   --bg-deep: #131b2e;     /* tarjetas */
   --bg-elev: #1a2440;     /* hover / elevación */
   --ink: #e8edf5;         /* texto principal */
   --ink-soft: #94a3b8;    /* texto secundario (slate-400) */
   --ink-mute: #64748b;    /* aún más sutil (slate-500) */
-  --accent: #2dd4bf;      /* teal-400 — fresco, tech */
-  --accent-2: #38bdf8;    /* sky-400 — secundario */
-  --accent-3: #c084fc;    /* purple-400 — para proyecto 2 */
+  --accent: #2dd4bf;      /* teal-400: fresco, tech */
+  --accent-2: #38bdf8;    /* sky-400: secundario */
+  --accent-3: #c084fc;    /* purple-400: para proyecto 2 */
   --accent-glow: rgba(45, 212, 191, 0.18);
   --accent-glow-soft: rgba(45, 212, 191, 0.08);
   --line: #1f2940;        /* divisores oscuros */
