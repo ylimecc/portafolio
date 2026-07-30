@@ -54,20 +54,42 @@
 
     <!-- HERO -->
     <section class="hero" id="inicio">
-      <p class="hero__eyebrow" data-rise style="--rise: 0ms"><span class="hero__prompt">emily@ec:~$</span> <span class="hero__cmd" id="cmd">whoami</span><span class="hero__caret">_</span></p>
-      <h1 class="hero__title" data-rise style="--rise: 90ms">
-        Hola, soy <em>Emily Castellanos</em>.<br>
-        Construyo <span class="accent">sitios web</span> y aplicaciones.
-      </h1>
-      <p class="hero__lead" data-rise style="--rise: 180ms">
-        Estudiante de Ingeniería en Sistemas en la Universidad Kuepa - México.<br>
-        Aquí encontrarás mis certificaciones, mis primeros proyectos y lo que estoy construyendo a continuación.
-      </p>
-      <a href="#proyectos" class="hero__cta" data-rise style="--rise: 270ms">Ver proyectos <span class="hero__cta-arrow">→</span></a>
+      <div class="hero__copy">
+        <h1 class="hero__title" data-rise style="--rise: 0ms">
+          Hola, soy <em>Emily Castellanos</em>.<br>
+          Construyo <span class="accent">sitios web</span> y aplicaciones.
+        </h1>
+        <p class="hero__lead" data-rise style="--rise: 120ms">
+          Estudiante de Ingeniería en Sistemas en la Universidad Kuepa - México.<br>
+          Aquí encontrarás mis certificaciones, mis primeros proyectos y lo que estoy construyendo a continuación.
+        </p>
+        <a href="#proyectos" class="hero__cta" data-rise style="--rise: 240ms">Ver proyectos <span class="hero__cta-arrow">→</span></a>
+      </div>
+
+      <aside class="hero__term" data-rise style="--rise: 200ms" aria-label="Terminal con un resumen de Emily">
+        <div class="term__bar">
+          <span></span><span></span><span></span>
+          <p>emily@ec: ~</p>
+        </div>
+        <div class="term__body" id="term">
+          <p class="t-line t-cmd"><span class="t-prompt">emily@ec:~$</span> <span class="t-type" data-text="whoami">whoami</span></p>
+          <p class="t-line t-out">Emily Castellanos</p>
+          <p class="t-line t-out t-dim">Ingeniería en Sistemas · Universidad Kuepa · México</p>
+          <p class="t-line t-cmd"><span class="t-prompt">emily@ec:~$</span> <span class="t-type" data-text="ls ~/proyectos">ls ~/proyectos</span></p>
+          <p class="t-line t-out t-ls">
+            <a href="https://www.enarmdrre.com/" target="_blank" rel="noopener">enarmre/</a>
+            <a href="https://ylimecc.github.io/sunly-reminder/" target="_blank" rel="noopener">sunly-reminder/</a>
+            <a href="https://ylimecc.github.io/SubFlow/" target="_blank" rel="noopener">subflow/</a>
+            <a href="https://ylimecc.github.io/Bisory/" target="_blank" rel="noopener">bisory/</a>
+          </p>
+          <p class="t-line t-cmd"><span class="t-prompt">emily@ec:~$</span> <span class="hero__caret">_</span></p>
+        </div>
+      </aside>
+
       <div class="hero__ground" data-rise style="--rise: 380ms">
         <div class="benny-box" id="bennyBox" title="Benny">
           <canvas id="benny" width="56" height="40" role="img" aria-label="Benny, el perrito de Emily, trotando por la página"></canvas>
-          <a class="benny-tip" id="bennyTip" href="benny">guau · ¿jugamos?</a>
+          <a class="benny-tip" id="bennyTip" href="404.html">guau · ¿jugamos?</a>
         </div>
       </div>
     </section>

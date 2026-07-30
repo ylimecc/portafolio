@@ -23,16 +23,34 @@
   // --- Secuencia de entrada del hero ---
   setTimeout(() => document.documentElement.classList.add('is-loaded'), 60);
 
-  // La terminal teclea "whoami"; el título responde
-  const cmd = document.getElementById('cmd');
-  if (cmd && !reduce && !document.hidden) {
-    const texto = cmd.textContent;
-    cmd.textContent = '';
-    let i = 0;
-    setTimeout(function tick() {
-      cmd.textContent = texto.slice(0, ++i);
-      if (i < texto.length) setTimeout(tick, 85);
-    }, 420);
+  // La terminal del hero se reproduce línea a línea; los comandos se teclean
+  const term = document.getElementById('term');
+  if (term) {
+    const lines = Array.from(term.querySelectorAll('.t-line'));
+    if (reduce || document.hidden) {
+      term.classList.add('is-static');
+    } else {
+      let idx = 0;
+      function nextLine() {
+        if (idx >= lines.length) return;
+        const line = lines[idx++];
+        const type = line.querySelector('.t-type');
+        line.classList.add('is-shown');
+        if (type) {
+          const texto = type.dataset.text;
+          type.textContent = '';
+          let i = 0;
+          (function tick() {
+            type.textContent = texto.slice(0, ++i);
+            if (i < texto.length) setTimeout(tick, 55);
+            else setTimeout(nextLine, 280);
+          })();
+        } else {
+          setTimeout(nextLine, 170);
+        }
+      }
+      setTimeout(nextLine, 650);
+    }
   }
 
   // --- Animación de entrada al hacer scroll ---

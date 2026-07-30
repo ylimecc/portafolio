@@ -240,6 +240,64 @@ section:last-child { border-bottom: none; }
   animation: blink 1.1s steps(2) infinite;
 }
 
+/* ---------- TERMINAL DEL HERO ---------- */
+.hero__term {
+  margin-top: var(--gap-l);
+  background: #0b1120;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(45, 212, 191, 0.04);
+  overflow: hidden;
+}
+.term__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.65rem 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+.term__bar span { width: 10px; height: 10px; border-radius: 50%; }
+.term__bar span:nth-child(1) { background: rgba(248, 113, 113, 0.65); }
+.term__bar span:nth-child(2) { background: rgba(251, 191, 36, 0.65); }
+.term__bar span:nth-child(3) { background: rgba(52, 211, 153, 0.65); }
+.term__bar p {
+  position: absolute;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--ink-mute);
+  pointer-events: none;
+}
+.term__body {
+  padding: 1rem 1.1rem 1.2rem;
+  font-family: var(--mono);
+  font-size: 0.83rem;
+  line-height: 1.9;
+}
+.t-line { margin: 0; }
+.t-cmd { color: var(--ink); }
+.t-out { color: var(--ink-soft); }
+.t-dim { color: var(--ink-mute); }
+.t-prompt { color: var(--accent); }
+.t-ls { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; }
+.t-ls a {
+  color: var(--accent-2);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+.t-ls a:hover { border-color: var(--accent-2); }
+.t-ls a:active { opacity: 0.7; }
+
+/* Repetición línea a línea (solo con JS; sin JS todo visible) */
+.js .t-line {
+  opacity: 0;
+  transition: opacity 0.18s ease;
+}
+.js .t-line.is-shown,
+.js .term__body.is-static .t-line { opacity: 1; }
+
 /* Secuencia de entrada del hero (solo con JS activo) */
 .js .hero [data-rise] {
   opacity: 0;
@@ -790,6 +848,15 @@ section:last-child { border-bottom: none; }
     transition: color 0.2s ease, border-color 0.2s ease;
   }
   .nav__menu a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.9fr);
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: center;
+  }
+  .hero__term { margin-top: 0; }
+  .hero__ground { grid-column: 1 / -1; margin-top: var(--gap-m); }
 
   .about__grid {
     display: grid;
