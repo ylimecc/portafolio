@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
   <meta charset="UTF-8">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Portafolio de Emily Castellanos: Ingeniería en Sistemas, desarrollador web.">
   <title>Emily Castellanos: portafolio</title>
@@ -53,21 +54,27 @@
 
     <!-- HERO -->
     <section class="hero" id="inicio">
-      <p class="hero__eyebrow">// portafolio · 2026</p>
-      <h1 class="hero__title">
+      <p class="hero__eyebrow" data-rise style="--rise: 0ms"><span class="hero__prompt">emily@ec:~$</span> <span class="hero__cmd" id="cmd">whoami</span><span class="hero__caret">_</span></p>
+      <h1 class="hero__title" data-rise style="--rise: 90ms">
         Hola, soy <em>Emily Castellanos</em>.<br>
         Construyo <span class="accent">sitios web</span> y aplicaciones.
       </h1>
-      <p class="hero__lead">
+      <p class="hero__lead" data-rise style="--rise: 180ms">
         Estudiante de Ingeniería en Sistemas en la Universidad Kuepa - México.<br>
         Aquí encontrarás mis certificaciones, mis primeros proyectos y lo que estoy construyendo a continuación.
       </p>
-      <a href="#proyectos" class="hero__cta">Ver proyectos →</a>
+      <a href="#proyectos" class="hero__cta" data-rise style="--rise: 270ms">Ver proyectos <span class="hero__cta-arrow">→</span></a>
+      <div class="hero__ground" data-rise style="--rise: 380ms">
+        <div class="benny-box" id="bennyBox" title="Benny">
+          <canvas id="benny" width="56" height="40" role="img" aria-label="Benny, el perrito de Emily, trotando por la página"></canvas>
+          <a class="benny-tip" id="bennyTip" href="benny">guau · ¿jugamos?</a>
+        </div>
+      </div>
     </section>
 
     <!-- SOBRE MÍ -->
     <section class="about" id="sobre-mi">
-      <p class="section__label">01. Sobre mí</p>
+      <p class="section__label">01-sobre-mi</p>
       <div class="about__grid">
         <div class="about__text">
           <img src="img/profile.jpg" alt="Foto de Emily Castellanos" class="about__avatar" loading="lazy" width="576" height="576">
@@ -94,7 +101,7 @@
 
     <!-- CERTIFICACIONES -->
     <section class="certs" id="certificaciones">
-      <p class="section__label">02. Certificaciones</p>
+      <p class="section__label">02-certificaciones</p>
       <p class="certs__lead">
         Certificaciones obtenidas a lo largo de mi formación. Cada una representa una habilidad o área que he estudiado y aplicado.
       </p>
@@ -213,7 +220,7 @@
 
     <!-- PROYECTOS -->
     <section class="work" id="proyectos">
-      <p class="section__label">03. Proyectos</p>
+      <p class="section__label">03-proyectos</p>
 
       <article class="project">
         <div class="project__visual" data-color="violet">
@@ -290,7 +297,7 @@
 
     <!-- CONTACTO -->
     <section class="contact" id="contacto">
-      <p class="section__label">04. Contacto</p>
+      <p class="section__label">04-contacto</p>
       <h2 class="contact__title">¿Trabajamos juntos?</h2>
       <p class="contact__lead">
         Estoy disponible para nuevos proyectos web y disponible para colaboraciones.
