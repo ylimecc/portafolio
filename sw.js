@@ -1,10 +1,11 @@
 /* Página offline: cuando no hay conexión, cualquier navegación muestra el 404 de Benny */
 const CACHE = "benny-offline-v1";
-const OFFLINE_URL = "/portafolio/404.html";
+const ruta = f => new URL(f, self.location).pathname;
+const OFFLINE_URL = ruta("404.html");
 const ASSETS = [
   OFFLINE_URL,
-  "/portafolio/fonts/fraunces-latin.woff2",
-  "/portafolio/fonts/jetbrainsmono-latin.woff2",
+  ruta("fonts/fraunces-latin.woff2"),
+  ruta("fonts/jetbrainsmono-latin.woff2"),
 ];
 
 self.addEventListener("install", e => {
