@@ -313,7 +313,7 @@ section:last-child { border-bottom: none; }
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(1.9rem, 6.2vw, 2.9rem);
-  line-height: 1.12;
+  line-height: 1.18;
   letter-spacing: -0.022em;
   margin-bottom: var(--gap-m);
   color: var(--ink);
@@ -323,10 +323,8 @@ section:last-child { border-bottom: none; }
 .hero__title em {
   font-style: italic;
   font-weight: 500;
-  background: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--accent-2);
+  text-shadow: 0 0 24px rgba(56, 189, 248, 0.28);
 }
 .hero__title .accent {
   color: var(--accent);
@@ -857,6 +855,8 @@ section:last-child { border-bottom: none; }
   }
   .hero__term { margin-top: 0; }
   .hero__ground { grid-column: 1 / -1; margin-top: var(--gap-m); }
+  .hero__title { font-size: clamp(2rem, 3.4vw, 2.75rem); }
+  .hero__title em { white-space: nowrap; }
 
   .about__grid {
     display: grid;
@@ -887,7 +887,7 @@ section:last-child { border-bottom: none; }
   .nav { padding: 1.6rem 4rem; }
   section { padding: 7rem 0; }
   .hero { padding-top: 5rem; padding-bottom: 8rem; }
-  .hero__title { font-size: 3.4rem; max-width: 20ch; line-height: 1.1; }
+  .hero__title { font-size: 2.75rem; max-width: 22ch; line-height: 1.16; }
   .hero__lead { font-size: 1.15rem; }
 
   .certs__grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
