@@ -30,11 +30,11 @@
   --ink: #e8edf5;         /* texto principal */
   --ink-soft: #94a3b8;    /* texto secundario (slate-400) */
   --ink-mute: #64748b;    /* aún más sutil (slate-500) */
-  --accent: #2dd4bf;      /* teal-400: fresco, tech */
+  --accent: #e8963e;      /* naranja Benny: cálido, propio */
   --accent-2: #38bdf8;    /* sky-400: secundario */
   --accent-3: #c084fc;    /* purple-400: para proyecto 2 */
-  --accent-glow: rgba(45, 212, 191, 0.18);
-  --accent-glow-soft: rgba(45, 212, 191, 0.08);
+  --accent-glow: rgba(232, 150, 62, 0.18);
+  --accent-glow-soft: rgba(232, 150, 62, 0.08);
   --line: #1f2940;        /* divisores oscuros */
   --line-bright: #2d3a5f; /* línea más visible (hover) */
 
@@ -73,7 +73,7 @@ body {
   background: var(--bg);
   /* Atmósfera: gradientes radiales sutiles para crear profundidad */
   background-image:
-    radial-gradient(ellipse 80% 50% at 15% 0%, rgba(45, 212, 191, 0.10), transparent 60%),
+    radial-gradient(ellipse 80% 50% at 15% 0%, rgba(232, 150, 62, 0.09), transparent 60%),
     radial-gradient(ellipse 70% 50% at 85% 100%, rgba(56, 189, 248, 0.07), transparent 60%),
     radial-gradient(ellipse 60% 40% at 50% 50%, rgba(192, 132, 252, 0.04), transparent 70%);
   background-attachment: fixed;
@@ -246,7 +246,7 @@ section:last-child { border-bottom: none; }
   background: #0b1120;
   border: 1px solid var(--line);
   border-radius: 10px;
-  box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(45, 212, 191, 0.04);
+  box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(232, 150, 62, 0.05);
   overflow: hidden;
 }
 .term__bar {
@@ -589,10 +589,10 @@ section:last-child { border-bottom: none; }
 }
 
 /* Acentos por emisor */
-.cert[data-issuer="cisco"]   { --cert-accent: var(--accent);    --cert-glow: rgba(45, 212, 191, 0.28); }
+.cert[data-issuer="cisco"]   { --cert-accent: var(--accent);    --cert-glow: rgba(232, 150, 62, 0.28); }
 .cert[data-issuer="uk"]      { --cert-accent: var(--accent-3);  --cert-glow: rgba(192, 132, 252, 0.25); }
 .cert[data-issuer="funadeh"] { --cert-accent: var(--accent-2);  --cert-glow: rgba(56, 189, 248, 0.25); }
-.cert[data-issuer="oracle"]  { --cert-accent: #f59e0b;          --cert-glow: rgba(245, 158, 11, 0.25); }
+.cert[data-issuer="oracle"]  { --cert-accent: #2dd4bf;          --cert-glow: rgba(45, 212, 191, 0.25); }
 .cert[data-issuer="infop"]   { --cert-accent: #f472b6;          --cert-glow: rgba(244, 114, 182, 0.25); }
 
 /* ---------- PROYECTOS ---------- */
@@ -688,6 +688,21 @@ section:last-child { border-bottom: none; }
   z-index: 2;
 }
 
+/* Captura real de la app: la imagen llena el marco, sin capas decorativas */
+.project__visual.project__visual--shot {
+  padding: 0;
+  aspect-ratio: auto;
+}
+.project__visual.project__visual--shot img {
+  width: 100%;
+  max-width: 100%;
+  max-height: none;
+  border-radius: 0;
+  filter: none;
+}
+.project__visual.project__visual--shot::before,
+.project__visual.project__visual--shot::after { content: none; }
+
 @media (hover: hover) and (pointer: fine) {
   .project:hover .project__visual {
     transform: translateY(-3px);
@@ -720,6 +735,12 @@ section:last-child { border-bottom: none; }
   margin-bottom: 0.9rem;
   max-width: 52ch;
 }
+.project__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  align-items: baseline;
+}
 .project__link {
   font-family: var(--mono);
   font-size: 0.9rem;
@@ -729,6 +750,11 @@ section:last-child { border-bottom: none; }
   transition: color 0.2s ease, border-color 0.2s ease, letter-spacing 0.25s ease;
 }
 .project__link:hover { letter-spacing: 0.04em; }
+.project__link--code {
+  color: var(--ink-soft);
+  border-bottom-color: var(--line-bright);
+}
+.project__link--code:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
 .work__note {
   margin-top: var(--gap-l);

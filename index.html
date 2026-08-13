@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portafolio de Emily Castellanos: Ingeniería en Sistemas, desarrollador web.">
+  <meta name="description" content="Portafolio de Emily Castellanos: desarrollo de apps de escritorio y web. SubFlow, Bisory y Sunly Reminder.">
   <title>Emily Castellanos: portafolio</title>
   <meta name="theme-color" content="#0a0f1c">
 
@@ -16,16 +16,17 @@
 
   <!-- Open Graph (LinkedIn, WhatsApp, Facebook) -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ylimecc.github.io/portafolio/">
   <meta property="og:title" content="Emily Castellanos: portafolio">
-  <meta property="og:description" content="Estudiante de Ingeniería en Sistemas en la Universidad Kuepa. Construyo sitios web y, pronto, aplicaciones. Mira mis certificaciones y proyectos.">
-  <meta property="og:image" content="img/profile.jpg">
+  <meta property="og:description" content="Estudiante de Ingeniería en Sistemas. Apps de escritorio y web publicadas: SubFlow, Bisory y Sunly Reminder. Mira mis certificaciones y proyectos.">
+  <meta property="og:image" content="https://ylimecc.github.io/portafolio/img/profile.jpg">
   <meta property="og:locale" content="es_MX">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Emily Castellanos: portafolio">
-  <meta name="twitter:description" content="Estudiante de Ingeniería en Sistemas en la Universidad Kuepa. Construyo sitios web y, pronto, aplicaciones.">
-  <meta name="twitter:image" content="img/profile.jpg">
+  <meta name="twitter:description" content="Estudiante de Ingeniería en Sistemas. Apps de escritorio y web publicadas: SubFlow, Bisory y Sunly Reminder.">
+  <meta name="twitter:image" content="https://ylimecc.github.io/portafolio/img/profile.jpg">
 
   <link rel="preload" href="fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/jetbrainsmono-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -57,11 +58,12 @@
       <div class="hero__copy">
         <h1 class="hero__title" data-rise style="--rise: 0ms">
           Hola, soy <em>Emily Castellanos</em>.<br>
-          Construyo <span class="accent">sitios web</span> y aplicaciones.
+          Hago <span class="accent">apps de escritorio y web</span>: tres publicadas hasta ahora.
         </h1>
         <p class="hero__lead" data-rise style="--rise: 120ms">
-          Estudiante de Ingeniería en Sistemas en la Universidad Kuepa - México.<br>
-          Aquí encontrarás mis certificaciones, mis primeros proyectos y lo que estoy construyendo a continuación.
+          Estudiante de Ingeniería en Sistemas en la Universidad Kuepa, México.
+          Lo último que construí: un editor de subtítulos con IA offline, un visor
+          de capturadora de baja latencia y una app de recordatorios sin distracciones.
         </p>
         <a href="#proyectos" class="hero__cta" data-rise style="--rise: 240ms">Ver proyectos <span class="hero__cta-arrow">→</span></a>
       </div>
@@ -111,11 +113,11 @@
           </p>
         </div>
         <ul class="about__skills">
-          <li>Desarrollo web</li>
-          <li>HTML, CSS, JavaScript</li>
-          <li>Diseño responsivo</li>
-          <li>Git & GitHub</li>
-          <li>Aprendizaje continuo</li>
+          <li>Apps de escritorio para Windows</li>
+          <li>IA local: transcripción con Whisper</li>
+          <li>Captura y video de baja latencia</li>
+          <li>Desarrollo web: HTML, CSS y JavaScript</li>
+          <li>Git &amp; GitHub</li>
         </ul>
       </div>
     </section>
@@ -203,15 +205,16 @@
             App de tareas y recordatorios diseñada para que tu día se sienta
             ordenado, no abrumado. Sin anuncios, sin distracciones: sólo lo que necesitas.
           </p>
-          <a href="https://ylimecc.github.io/sunly-reminder/" class="project__link" target="_blank" rel="noopener">Visitar el sitio →</a>
+          <div class="project__links">
+            <a href="https://ylimecc.github.io/sunly-reminder/" class="project__link" target="_blank" rel="noopener">Visitar el sitio →</a>
+            <a href="https://github.com/ylimecc/sunly-reminder" class="project__link project__link--code" target="_blank" rel="noopener">Código →</a>
+          </div>
         </div>
       </article>
 
       <article class="project">
-        <div class="project__visual" data-color="emerald">
-          <picture>
-            <img src="img/subflow.png" alt="Logo de SubFlow" loading="lazy" width="600" height="600">
-          </picture>
+        <div class="project__visual project__visual--shot" data-color="emerald">
+          <img src="img/subflow-app.jpg" alt="SubFlow en uso: tabla de subtítulos sincronizada con el video que se está transcribiendo" loading="lazy" width="1400" height="734">
         </div>
         <div class="project__body">
           <p class="project__meta">2026 · Aplicación de escritorio</p>
@@ -221,7 +224,10 @@
             con IA Whisper: completamente offline, sin enviar nada a la nube y sin API keys.
             Soporta formatos profesionales (SRT, VTT, ASS).
           </p>
-          <a href="https://ylimecc.github.io/SubFlow/" class="project__link" target="_blank" rel="noopener">Visitar el sitio →</a>
+          <div class="project__links">
+            <a href="https://ylimecc.github.io/SubFlow/" class="project__link" target="_blank" rel="noopener">Visitar el sitio →</a>
+            <a href="https://github.com/ylimecc/SubFlow" class="project__link project__link--code" target="_blank" rel="noopener">Código →</a>
+          </div>
         </div>
       </article>
 
@@ -237,7 +243,10 @@
             Juega tus consolas favoritas directamente en tu monitor con cualquier
             capturadora USB: sin OBS, sin configurar nada.
           </p>
-          <a href="https://ylimecc.github.io/Bisory/" class="project__link" target="_blank" rel="noopener">Visitar el sitio →</a>
+          <div class="project__links">
+            <a href="https://ylimecc.github.io/Bisory/" class="project__link" target="_blank" rel="noopener">Visitar el sitio →</a>
+            <a href="https://github.com/ylimecc/Bisory" class="project__link project__link--code" target="_blank" rel="noopener">Código →</a>
+          </div>
         </div>
       </article>
 
@@ -253,6 +262,7 @@
       </p>
       <a href="mailto:photonpounce@gmail.com" class="contact__email">photonpounce@gmail.com</a>
       <ul class="contact__social">
+        <li><a href="https://github.com/ylimecc" target="_blank" rel="noopener">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/emilyrcc/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </section>
