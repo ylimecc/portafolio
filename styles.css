@@ -665,20 +665,7 @@ section:last-child { border-bottom: none; }
   transition: transform 0.35s var(--ease-out);
 }
 
-/* Capa 2: rejilla técnica sutil (efecto editor / Figma) */
-.project__visual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
-  background-size: 28px 28px;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Capa 3: brillo en esquina superior */
+/* Capa 2: brillo en esquina superior */
 .project__visual::after {
   content: "";
   position: absolute;
@@ -687,21 +674,6 @@ section:last-child { border-bottom: none; }
   pointer-events: none;
   z-index: 2;
 }
-
-/* Captura real de la app: la imagen llena el marco, sin capas decorativas */
-.project__visual.project__visual--shot {
-  padding: 0;
-  aspect-ratio: auto;
-}
-.project__visual.project__visual--shot img {
-  width: 100%;
-  max-width: 100%;
-  max-height: none;
-  border-radius: 0;
-  filter: none;
-}
-.project__visual.project__visual--shot::before,
-.project__visual.project__visual--shot::after { content: none; }
 
 @media (hover: hover) and (pointer: fine) {
   .project:hover .project__visual {
